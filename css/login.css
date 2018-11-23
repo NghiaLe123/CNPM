@@ -1,0 +1,65 @@
+body{
+	display: flex;
+	background-color: #f9e698;
+	margin: 0;
+	padding: 0;
+}
+img{
+	width: 30%;
+}
+.container-background{
+	background-color: #64FE2E;
+	width: 40%;
+	height: auto;
+	border: 2px solid #000000;
+	border-radius: 20px;
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.IDLogin{
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+	margin-top: 5%;
+	margin-bottom: 7%;
+	color: red;
+}
+.IDUsername {
+	text-align: center;
+	margin-bottom: 5%;
+}
+.IDUsername input{
+	width: 70%;
+	height: 40px;
+	font-size: 20px;
+	padding-left: 2%;
+	border-radius: 20px
+}
+.IDforget{
+	margin-left: 63%;
+	margin-top: 2%;
+	font-size: 110%;
+}
+.IDbuttonLogin{
+	text-align: center;
+	margin-top: 4%;
+}
+.IDbuttonLogin input{
+	width:25%;
+	height: 50px;
+	font-size: 100%;
+	font-weight: bold;
+	margin-bottom: 10%;
+	border-radius: 20px;
+	margin-right: 5%;
+	border: 1px solid #0582ff;
+}
+.IDbuttonLogin input:hover{
+	background-color: #0582ff;
+}
+.checkbox{
+	font-size: 20px;
+	margin-left: 13%;
+}
+
+
