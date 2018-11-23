@@ -1,0 +1,61 @@
+.navb{
+		margin-left :10%; 
+		margin-right: 10%; 
+		background-color: #4285F4; 
+		border-radius: 15px; 
+		margin-top: 8px;
+		margin-bottom: 10px;
+		
+	
+}
+.navbar{
+	
+	background: transparent;
+	margin: 0;
+}
+
+.navbar li a{
+	
+	
+	margin-top: 5px;
+	padding: 8px ;
+	color: black;
+	
+}
+
+.a{
+	border-right: solid 1px #ccc;
+	
+}
+
+
+.taikhoan{
+		margin-left :10%; 
+		margin-right: 10%; 
+		border-radius: 15px; 
+		margin-bottom: -10px;
+	
+}
+
+.navb a{
+	color: white;
+}
+
+.board{
+		margin-left :10%; 
+		margin-right: 10%; 
+		border-radius: 15px; 
+		margin-top: 10px;
+		height: auto;
+		border: solid 1px;
+		display: none;
+}
+
+.board-ins{
+		margin-left :10%; 
+		margin-right: 10%; 
+		border-radius: 15px; 
+		margin-top: 50px;
+		border: solid 1px;
+}
+
