@@ -3,7 +3,7 @@ package myjava.mybignumber;
 /**
  * Tác giả: NGUYỄN TRẦN QUỐC VƯƠNG.
  * MyBigNumber là lớp để Cộng 2 số lớn bằng 2 chuỗi
- * MyBigNumber là hàm để thực hiện phép cộng 2 chuỗi số
+ * sum là hàm để thực hiện phép cộng 2 chuỗi số
  */
 
 public class MyBigNumber {  
