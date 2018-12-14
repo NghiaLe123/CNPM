@@ -1,57 +1,24 @@
+package mybignumber;
 
-public class MyBigNumberTest{
-	/**
-	 *
-	 * @author Nguyen Tien Dung
-	 */
-	public static void main(String[] args){
-		testSum_N1();
-		testSum_N2();
-		testSum_N3();
-		testSum_N4();
-	}
-	
-	public static void testSum_N1() {
-        MyBigNumber mybignumber = new MyBigNumber();
-        String sum = mybignumber.sum("1", "2");
+/**
+ * Tác giả:  Nguyễn Tiến Dũng.
+ * DesCription.
+ * IReceiver là interface cho phép in từng bước cộng 2 số
+ * Hàm send cho hàm cho phép ta in ra chuỗi
+ */
+public class MyBigNumberTest implements IReceiver {
 
-        if(sum.equals("3")){
-			System.out.println("True");
-		}else{
-			System.out.println("False");
-		}
-	}
-	
-	public static void testSum_N2() {
-        MyBigNumber mybignumber = new MyBigNumber();
-        String sum = mybignumber.sum("1234", "987");
+    public static void main(String[] args) {
+        MyBigNumberTest app = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(app);
+        String sum = mybignumber.sum("1213", "978");
+        
+        System.out.println("Final step: " + sum);
+    }
 
-        if(sum.equals("2221")){
-			System.out.println("True");
-		}else{
-			System.out.println("False");
-		}
-	}
-	
-	public static void testSum_N3() {
-        MyBigNumber mybignumber = new MyBigNumber();
-        String sum = mybignumber.sum("1123", "12");
-
-        if(sum.equals("1135")){
-			System.out.println("True");
-		}else{
-			System.out.println("False");
-		}
-	}
-	
-	public static void testSum_N4() {
-        MyBigNumber mybignumber = new MyBigNumber();
-        String sum = mybignumber.sum("11", "1123");
-
-        if(sum.equals("1134")){
-			System.out.println("True");
-		}else{
-			System.out.println("False");
-		}
-	}
+    public void send(String msg) {
+		//TODO Auto-generated method stub
+        System.out.println(msg);
+    }
 }
+
