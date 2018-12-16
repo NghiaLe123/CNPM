@@ -1,5 +1,9 @@
 package myjava.mybignumber;
 
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 /**
  * by Nguyễn Trần Quốc Vương.
  * Giới thiệu.
@@ -31,6 +35,11 @@ public class MyBigNumber {
         String conver = ""; 
         String step = "";// Chuỗi step sẽ làm tham số cho hàm send của interface
         int v;
+        long start;
+        long end;
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss yyyy-MM-dd "); // tạo 1 đối tượng có định dạng thời gian HH:mm:ss yyyy-MM-dd
+        Date date = new Date(); // lấy thời gian hệ thống
+        String stringDate = dateFormat.format(date);//Định dạng thời gian theo trên
 
         int ix1; // Vị trí của chuổi s1
         int ix2; // Vị trí của chuổi s2
@@ -73,14 +82,16 @@ public class MyBigNumber {
             finalkq = (t % 10) + finalkq;
             sonho = t / 10;
             
+            
+            
             if (i == 0) {
                 v = i + 1;
                 conver = "Bước " + v + " : Lấy " + d1 + " + " + d2 + " = " + k 
-                    + " , " + " Ghi " + finalkq + " , " + " Nhớ " + sonho + "\n";
+                    + " , " + " Ghi " + finalkq + " , " + " Nhớ " + sonho + " , Thời gian thực hiện : " + stringDate + "\n";
             } else {
                 v = i + 1;
                 conver = " Bước " + v + " : Lấy " + d1 + " + " + d2 + " + " + sonho 
-                    + " = " + t + " , " + " Ghi " + finalkq + " , " + " Nhớ " + sonho + "\n";
+                    + " = " + t + " , " + " Ghi " + finalkq + " , " + " Nhớ " + sonho + " , Thời gian thực hiện : " + stringDate + "\n";
             }
             step = step + conver;
         }
