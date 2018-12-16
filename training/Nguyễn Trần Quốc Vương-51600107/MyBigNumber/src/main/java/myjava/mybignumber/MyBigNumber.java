@@ -1,12 +1,18 @@
-package myjava.mybignumber; 
+package myjava.mybignumber;
 
 /**
- * Tác giả: NGUYỄN TRẦN QUỐC VƯƠNG.
- * MyBigNumber là lớp để Cộng 2 số lớn bằng 2 chuỗi
- * sum là hàm để thực hiện phép cộng 2 chuỗi số
+ * by Nguyễn Trần Quốc Vương.
+ * Giới thiệu.
+ * Class MyBigNumber là lớp để cộng 2 số.
+ * Hàm sum trong Class MyBigNumber là hàm để thực hiện phép cộng 2 chuỗi số
  */
 
-public class MyBigNumber {  
+public class MyBigNumber {
+    private IReceiver ireceiver;
+
+    public MyBigNumber(final IReceiver ireceiver) {
+        this.ireceiver = ireceiver;
+    }
 
     /**
      * Để thực hiện phép cộng, ta cần 2 chuỗi làm tham số cho hàm sum trong đó:
@@ -22,6 +28,9 @@ public class MyBigNumber {
         int len1 = s1.length(); //Đội dài của s1
         int len2 = s2.length(); //Độ dài của s2
         int maxLen = (len1 > len2) ? len1 : len2;
+        String conver = ""; 
+        String step = "";// Chuỗi step sẽ làm tham số cho hàm send của interface
+        int v;
 
         int ix1; // Vị trí của chuổi s1
         int ix2; // Vị trí của chuổi s2
@@ -30,21 +39,22 @@ public class MyBigNumber {
         int d1; // kí số của c1
         int d2; // kí số của c2
         int t; // tổng của d1 và d2
+        int k; // tổng tạm không có số nhớ
         int sonho = 0; // nếu lớn hơn hoặc bằng 10 thì cộng vài sonho
         
         for (int i = 0; i < len1; i++) { //Kiểm tra trong chuổi s1 có chữ hay không
 
             if (Character.isLetter(s1.charAt(i))) {
                 // Nếu s1 có chữ hoặc kí tự thì sẽ dùng NumberFormatException
-                throw new NumberFormatException(" Ở " + (i + 1) + " trong chuỗi " + s1
+                throw new NumberFormatException(" Vị Trí " + (i + 1) + " trong chuỗi " + s1
                         + " là chữ hoặc kí tự");
             }
         }
-        for (int i = 0; i < len1; i++) { //Kiểm tra trong chuổi s2 có chữ hay không
+        for (int i = 0; i < len2; i++) { //Kiểm tra trong chuổi s2 có chữ hay không
 
-            if (Character.isLetter(s1.charAt(i))) {
+            if (Character.isLetter(s2.charAt(i))) {
                 // Nếu s2 có chữ hoặc kí tự thì sẽ dùng NumberFormatException
-                throw new NumberFormatException(" Ở " + (i + 1) + " trong chuỗi " + s1
+                throw new NumberFormatException(" Vị Trí " + (i + 1) + " trong chuỗi " + s2
                         + " là chữ hoặc kí tự");
             }
         }
@@ -58,13 +68,27 @@ public class MyBigNumber {
             d1 = c1 - '0';
             d2 = c2 - '0';
             t = d1 + d2 + sonho;
+            k = d1 + d2;
 
             finalkq = (t % 10) + finalkq;
             sonho = t / 10;
+            
+            if (i == 0) {
+                v = i + 1;
+                conver = "Bước " + v + " : Lấy " + d1 + " + " + d2 + " = " + k 
+                    + " , " + " Ghi " + finalkq + " , " + " Nhớ " + sonho + "\n";
+            } else {
+                v = i + 1;
+                conver = " Bước " + v + " : Lấy " + d1 + " + " + d2 + " + " + sonho 
+                    + " = " + t + " , " + " Ghi " + finalkq + " , " + " Nhớ " + sonho + "\n";
+            }
+            step = step + conver;
         }
         if (sonho > 0) {
             finalkq = sonho + finalkq; // Nếu mem còn dư thì cộng vào kết quả cuối
         }
+        step = "\n" + "Phép toán : " + s1 + " + " + s2 + "\n" + "Bước thực hiện : \n" + step;
+        this.ireceiver.send(step);
         
         return finalkq; // trả về kết quả cuối
     }

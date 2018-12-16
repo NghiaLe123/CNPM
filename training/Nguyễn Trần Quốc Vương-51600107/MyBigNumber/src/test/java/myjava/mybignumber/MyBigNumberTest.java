@@ -1,31 +1,41 @@
 package myjava.mybignumber;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
-class MyBigNumberTest {
+/**
+ * by Nguyễn Trần Quốc Vương.
+ * Giới thiệu.
+ * Class MyBigNumberTest là lớp để test hàm sum.
+ * Có test nhiều trường hợp
+ */
 
-	@Test
-	void testSum_N_1() {
-		MyBigNumber myClass = new MyBigNumber();
+class MyBigNumberTest implements IReceiver {
 
-		 String sum = myClass.sum("5", "7");
-
-		 assertEquals("12", sum);
-		 
-		 sum = myClass.sum("8", "9");
-
-		 assertEquals("17", sum);
-	}
-	@Test
-	 void testSum_N_2() {
-		MyBigNumber myClass = new MyBigNumber();
-
-		String sum = myClass.sum("153", "9");
-
-		assertEquals("162", sum);
-	 }
-	
-
+    @Test
+    
+    void testSum_N_1() {
+        MyBigNumber myClass = new MyBigNumber(this);
+        System.out.println("TEST_N_1 : " + myClass.sum("2","7"));
+    }
+    
+    @Test
+    
+    void testSum_N_2() {
+        MyBigNumber myClass = new MyBigNumber(this);
+        System.out.println("TEST_N_2 - Kết quả cuối cùng là :  " + myClass.sum("56","123"));
+    }
+    
+    @Test
+    
+    void testSum_N_3() {
+        MyBigNumber myClass = new MyBigNumber(this);
+        System.out.println("TEST_N_3 - Kết quả cuối cùng là : " + myClass.sum("56N","123"));
+    }
+    
+    @Override
+    
+    public void send(final String msg) {
+        // TODO Auto-generated method stub
+        System.out.println(msg);
+    }
 }
