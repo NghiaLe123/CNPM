@@ -16,60 +16,145 @@ public class MyBigNumberTest implements IReceiver {
      * Trong đó : 2 chuỗi chỉ được chứa các kí tự số từ '0' đến '9'.
      * <br/>
      */
-    public static void main(final String[] args) {
+    
+    public static int i = 1;
+    public static void main(String[] args){
         TestcaseN_1();
         TestcaseN_2();
         TestcaseN_3();
         TestcaseN_4();
         TestcaseN_5();
         TestcaseN_6();
+        TestcaseN_7();
+        TestcaseN_8();
+        TestcaseN_9();
+        TestcaseN_10();
+        TestcaseN_11();
     }
-    
     //Trường hợp cộng 2 số có 3 chữ số
     public static void TestcaseN_1(){
-        MyBigNumberTest app = new MyBigNumberTest();
-        MyBigNumber mybignumber = new MyBigNumber(app);
-        String sum = mybignumber.sum("121", "978");
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("123", "978");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
+        
     }
 
     //Trường hợp cộng 2 chữ số cho 3 chữ số
     public static void TestcaseN_2(){
-        MyBigNumberTest app = new MyBigNumberTest();
-        MyBigNumber mybignumber = new MyBigNumber(app);
-        String sum = mybignumber.sum("12", "978");;
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("12", "978");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
     }
     
     //Trường hợp cộng 3 chữ số cho 2 chữ số
     public static void TestcaseN_3(){
-        MyBigNumberTest app = new MyBigNumberTest();
-        MyBigNumber mybignumber = new MyBigNumber(app);
-        String sum = mybignumber.sum("123", "78");
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("1234", "78");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
     }
     
     //Trường hợp có chứa chữ
     public static void TestcaseN_4(){
-        MyBigNumberTest app = new MyBigNumberTest();
-        MyBigNumber mybignumber = new MyBigNumber(app);
-        String sum = mybignumber.sum("12A", "978");
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("12A", "978");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage() + "\n");
+        }
     }
     
     //Trường hợp có chứa kí tự đặc biệt
     public static void TestcaseN_5(){
-        MyBigNumberTest app = new MyBigNumberTest();
-        MyBigNumber mybignumber = new MyBigNumber(app);
-        String sum = mybignumber.sum("12=", "978");
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("12-", "978");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage() + "\n");
+        }
     }
     
     //Trường hợp có chứa số âm
     public static void TestcaseN_6(){
-        MyBigNumberTest app = new MyBigNumberTest();
-        MyBigNumber mybignumber = new MyBigNumber(app);
-        String sum = mybignumber.sum("-167", "978");
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("-12", "978");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage() + "\n");
+        }
     }
     
+    //Trường hợp s1 la chu
+    public static void TestcaseN_7(){
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("abc", "978");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage() + "\n");
+        }
+    }
+    
+    //Trường hợp có kí tự đặc biệt
+    public static void TestcaseN_8(){
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("abc+1", "978");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage() + "\n");
+        }
+    }
+    
+    public static void TestcaseN_9(){
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("+*&**)(^&*", "*&*()&&*&");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage() + "\n");
+        }
+    }
+    
+    //Chua dau .
+    public static void TestcaseN_10(){
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("123.456", "124");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage() + "\n");
+        }
+    }
+    
+     //Chua dau ,
+    public static void TestcaseN_11(){
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("123456", "12,4");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage() + "\n");
+        }
+    }
     
     public void send(final String msg) {
         //TODO Auto-generated method stub
-        System.out.println("case :" + msg);
+        System.out.println("case " + i + ":" + msg);
+        i++;
     }
 }
