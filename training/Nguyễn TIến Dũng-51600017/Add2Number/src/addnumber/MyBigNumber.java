@@ -45,54 +45,29 @@ public class MyBigNumber {
         final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
         final boolean flag1;// biến để lưu dữ kết quả xét chuỗi s1 
         final boolean flag2;// biến để lưu dữ kết quả xét chuỗi s2
-        
-        // Kiểm tra 2 chuỗi s1 và s2 có kí tự chữ hay không
-        for (int i = 0; i < length1; i++) {
-
-            if (Character.isLetter(s1.charAt(i))) {
-                this.ireceiver.send("Vị trí " + (i + 1) + " trong chuỗi " + s1
-                        + " không phải là số");
-                
-                return "error";
-            }
-        }
-        
-        for (int i = 0; i < length2; i++) {
-
-            if (Character.isLetter(s2.charAt(i))) {
-                this.ireceiver.send("Vị trí " + (i + 1) + " trong chuỗi " + s2
-                        + " không phải là số");
-                
-                return "error";
-            }
-        }
-        
+         
         // Kiểm tra số âm
         if (s1.charAt(0) == '-') {
-            this.ireceiver.send("Chưa hỗ trợ số âm " + s1);
-            
-            return "error";
+                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ số âm trong s1 : " + s1);
+                throw new NumberFormatException("Vui lòng không chứ số âm trong s1 : " + s1);
         } 
         
         if (s2.charAt(0) == '-') {
-            this.ireceiver.send("Chưa hỗ trợ số âm " + s2);
-            
-            return "error";
+                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ số âm trong s2 : " + s2);
+                throw new NumberFormatException("Vui lòng không chứ số âm trong s2");
         }
         
-        // Kiểm tra kí tự đặc biệt
+        // Kiểm tra kí tự đặc biệt hoặc chữ
         flag1 = s1.matches(pattern);
         flag2 = s2.matches(pattern);
         if (!flag1) {
-            this.ireceiver.send("Trong chuỗi số " + s1 + " có chưa kí tự đặc biệt");
-            
-            return "error";
+                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
+                throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
         }
         
         if (!flag2) {
-            this.ireceiver.send("Trong chuỗi số " + s2 + " có chưa kí tự đặc biệt");
-            
-            return "error";
+                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
+                throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
         }
         
         //// Lặp maxLen lần

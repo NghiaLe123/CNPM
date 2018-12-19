@@ -73,4 +73,3 @@ public class MyBigNumberTest implements IReceiver {
         System.out.println("case :" + msg);
     }
 }
-
