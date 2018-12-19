@@ -1,0 +1,19 @@
+package myjava.mybignumber;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class MyBigNumberTest {
+
+	@Test
+	void testMyBigNumber() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSum() {
+		fail("Not yet implemented");
+	}
+
+}
