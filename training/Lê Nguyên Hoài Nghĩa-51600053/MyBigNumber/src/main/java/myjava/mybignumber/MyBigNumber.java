@@ -40,41 +40,24 @@ public class MyBigNumber {
         int d2; // kí tự số của c2;
         int t; //tổng tạm của d1 và d2;
         int mem = 0; //nhớ nếu t>=10
-        Pattern p1 = Pattern.compile("[^a-z0-9 ]");
+        Pattern p1 = Pattern.compile("[^0-9 ]");
         Matcher m1 = p1.matcher(s1);
         boolean b1 = m1.find();
         
-        Pattern p2 = Pattern.compile("[^a-z0-9 ]");
+        Pattern p2 = Pattern.compile("[^0-9 ]");
         Matcher m2 = p2.matcher(s2);
         boolean b2 = m2.find();
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
-            throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt trong s1");
+            throw new NumberFormatException("Vui lòng không nhập kí tự khác số trong s1");
         }
         
         if (b2) {
 
-            throw new NumberFormatException("Vui lòng không nhập kí tự đặc biệt trong s2");
+            throw new NumberFormatException("Vui lòng không nhập kí tự khác số trong s2");
         }
         
-        for (int i = 0; i < len1 || i < len2; i++) {
 
-            //Kiểm tra nếu s1 có kí tự khác số
-            if (Character.isLetter(s1.charAt(i))) {
-
-                throw new NumberFormatException("Vui lòng không nhập kí tự khác số vào s1");
-            }
-        }
-        
-        
-        for (int i = 0; i < len2; i++) {
-
-            if (Character.isLetter(s2.charAt(i))) {
-                //kiểm tra nếu s2 có kí tự khác số
-                throw new NumberFormatException("Vui lòng không nhập kí tự khác số vào s2");
-            }
-
-        }
         
         //Lặp maxLen
         for (int i = 0; i < maxLen; i++) {
@@ -91,7 +74,7 @@ public class MyBigNumber {
             mem = t / 10;
             
             msg = "Bước " + (i + 1) + ": " + c1 + " + " + c2 + " = " 
-                + (t - mem) + " + " + mem + " = " + t + ". Viết " + (t % 10) + "Nhớ " + mem;
+                + (t - mem) + " + " + mem + " = " + t + ". Viết " + (t % 10) + " Nhớ " + mem;
             this.ireceiver.send(msg);
         }
         
