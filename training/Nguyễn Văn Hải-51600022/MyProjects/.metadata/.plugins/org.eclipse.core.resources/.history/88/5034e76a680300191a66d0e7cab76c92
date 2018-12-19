@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sum Of Two String Number</title>
+</head>
+<body>
+<h1>Application plus two sequences</h1>
+ <div class="mainLeft">
+ 	<span>The First Number</span>
+ 	<input type="text" name="num1" placeholder="Enter the first number..."><br/><br/>
+ 	
+ 	<span>The Second Number</span>
+ 	<input type="text" name="num2" placeholder="Enter the second number..."><br/><br/>
+ 	
+ 	<span>Result</span>
+ 	<input type="text" name="result">
+ </div>
+ 
+ <div class="mainRight">
+ 
+ </div>
+</body>
+</html>

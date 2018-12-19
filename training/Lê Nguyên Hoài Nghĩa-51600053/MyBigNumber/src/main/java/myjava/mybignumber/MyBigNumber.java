@@ -1,11 +1,21 @@
 package myjava.mybignumber;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Tác giả: Lê Nguyên Hoài Nghĩa.
  * MyBigNumber là lớp để Cộng 2 số lớn bằng 2 chuỗi
  * sum là hàm để thực hiện phép cộng 2 chuỗi số
  */
 public class MyBigNumber {
+
+    private IReceiver ireceiver;
+
+    public MyBigNumber(final IReceiver ireceiver) {
+
+        this.ireceiver = ireceiver;
+    }
     
     /**
      * Để thực hiện phép cộng, ta cần 2 chuỗi làm tham số cho hàm sum trong đó:
@@ -15,13 +25,13 @@ public class MyBigNumber {
     
     public String sum(final String s1,final String s2) {
         String finalResult = "";
+        String msg = "";
         
         //Quét các kí tự của chuỗi s1 và s2 từ phải qua trái
         //Xác định độ dài của s1, s2 và độ dài lớn nhất của 2 chuỗi
-
         int len1 = s1.length();
         int len2 = s2.length();
-        int maxLen = (len1 > len2) ? len1 : len2;
+        final int maxLen = (len1 > len2) ? len1 : len2;
         int index1; //số thứ tự đang xét của chuỗi s1
         int index2; //số thứ tự đang xét của chuỗi s2
         char c1; //kí tự tại vị trí index1 của chuỗi s1
@@ -30,6 +40,42 @@ public class MyBigNumber {
         int d2; // kí tự số của c2;
         int t; //tổng tạm của d1 và d2;
         int mem = 0; //nhớ nếu t>=10
+        Pattern p1 = Pattern.compile("[^a-z0-9 ]");
+        Matcher m1 = p1.matcher(s1);
+        boolean b1 = m1.find();
+        
+        Pattern p2 = Pattern.compile("[^a-z0-9 ]");
+        Matcher m2 = p2.matcher(s2);
+        boolean b2 = m2.find();
+        
+        if (b1) { // kiểm tra s1 có kí tự đặc biệt không
+            throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt trong s1");
+        }
+        
+        if (b2) {
+
+            throw new NumberFormatException("Vui lòng không nhập kí tự đặc biệt trong s2");
+        }
+        
+        for (int i = 0; i < len1 || i < len2; i++) {
+
+            //Kiểm tra nếu s1 có kí tự khác số
+            if (Character.isLetter(s1.charAt(i))) {
+
+                throw new NumberFormatException("Vui lòng không nhập kí tự khác số vào s1");
+            }
+        }
+        
+        
+        for (int i = 0; i < len2; i++) {
+
+            if (Character.isLetter(s2.charAt(i))) {
+                //kiểm tra nếu s2 có kí tự khác số
+                throw new NumberFormatException("Vui lòng không nhập kí tự khác số vào s2");
+            }
+
+        }
+        
         //Lặp maxLen
         for (int i = 0; i < maxLen; i++) {
             index1 = len1 - i - 1;
@@ -43,6 +89,10 @@ public class MyBigNumber {
             //lấy hàng đơn vị của t ghép vào phía trước kết quả
             finalResult = (t % 10) + finalResult;
             mem = t / 10;
+            
+            msg = "Bước " + (i + 1) + ": " + c1 + " + " + c2 + " = " 
+                + (t - mem) + " + " + mem + " = " + t + ". Viết " + (t % 10) + "Nhớ " + mem;
+            this.ireceiver.send(msg);
         }
         
         //kết thúc vòng lặp, nếu mem có giá trị thì ghép mem vào trước kq

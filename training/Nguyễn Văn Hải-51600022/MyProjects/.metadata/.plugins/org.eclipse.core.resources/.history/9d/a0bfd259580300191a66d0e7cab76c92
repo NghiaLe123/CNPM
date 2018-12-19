@@ -1,0 +1,17 @@
+package hainguyen.mybignumberapp;
+
+    import hainguyen.mybignumberapp.MyBigNumber;
+
+public class index implements IReceiver{
+	
+	index in = new index();
+	MyBigNumber myclass = MyBigNumber(in);
+
+	@Override
+	public void send(String msg) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

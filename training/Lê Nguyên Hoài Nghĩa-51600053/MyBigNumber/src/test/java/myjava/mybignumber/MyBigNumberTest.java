@@ -18,6 +18,7 @@ class MyBigNumberTest {
 	
 	@Test
 	void testSum_N_2() {
+		
 		MyBigNumber myClass = new MyBigNumber();
 		String sum = myClass.sum("123","9");
 		assertEquals("132",sum);

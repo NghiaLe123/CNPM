@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+E:\MyProjects\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\409105521.index
+\MyBigNumberApp\src\main\java
+E:\MyProjects\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1206404622.index
+\MyBigNumberApp\src\main\java
+E:\MyProjects\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2991279363.index
+\MyBigNumberApp\src\main\java

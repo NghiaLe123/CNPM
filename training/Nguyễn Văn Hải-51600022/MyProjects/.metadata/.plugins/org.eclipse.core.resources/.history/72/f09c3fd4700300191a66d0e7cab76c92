@@ -1,0 +1,54 @@
+package hainguyen.mybignumberapp;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@WebServlet("/getTwoNumberFromUser")
+@Controller
+public class HomeController implements IReceiver{
+	
+	HomeController homes = new HomeController();
+	MyBigNumber myclass = new MyBigNumber(homes);
+
+	protected void doHost(HttpServletRequest request, HttpServletResponse reponse) throws ServletException, IOException{
+		
+		//read form fields
+		String num1 = request.getParameter("num1");
+		String num2 = request.getParameter("num2");
+		
+		System.out.println(num1 + " , " + num2);
+		String sum = myclass.sum(num1, num2);
+		
+		//get reponse writer
+		PrintWriter writer = reponse.getWriter();
+		
+		//build HTML code
+		String htmlResponse = "<html>";
+		htmlResponse += "<pre>" + num1 + "</pre>";
+		htmlResponse += "</html>";
+		
+		//return response
+		writer.println(htmlResponse);
+	}
+	
+	@RequestMapping("home")
+	public String home() {
+		
+		return "index.jsp";
+		
+	}
+
+	@Override
+	public void send(String msg) {
+		// TODO Auto-generated method stub
+		
+	}
+}
