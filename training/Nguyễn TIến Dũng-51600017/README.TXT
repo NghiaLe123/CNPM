@@ -10,3 +10,11 @@ Hướng dẫn :
 ========================
 CONFIRM MY FRIEND
 ========================
+
+
+========================
+Nguyễn Văn Hải 
+- Đầu tiển mình thấy code của bạn sạch và giải thích khá dễ hiểu và app có hướng dẫn chi tiết giúp người dùng dễ dàng thực hiện. Những trong đó mình có vài ý kiến đóng góp là:
+- Testcase của bạn còn chưa đầy đủ các trường hợp ngoại lệ có thể xảy ra lúc người dùng nhập sai
+
+========================
