@@ -48,14 +48,27 @@ public class MyBigNumber {
         Matcher m2 = p2.matcher(s2);
         boolean b2 = m2.find();
         
+        if (s1.contains("-")) {
+        	
+            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s1);        	      	
+        }
+        
+        if (s2.contains("-")) {
+        	
+            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s2);        	      	
+        }
+        
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
-            throw new NumberFormatException("Vui lòng không nhập kí tự khác số trong s1");
+        	
+            throw new NumberFormatException("Lỗi xuất hiện kí tự khác số: " + s1);
         }
         
         if (b2) {
 
-            throw new NumberFormatException("Vui lòng không nhập kí tự khác số trong s2");
+            throw new NumberFormatException("Lỗi xuất hiện kí tự khác số: " + s2);
         }
+        
+        
         
 
         
