@@ -21,5 +21,11 @@
  - Không được viết abstract trong Interface.
  - Code test thiếu nhiều trường hợp.
  
-
+---------------------------------------
+ Nguyễn Tiến Dũng
+ - code sạch, dễ hiểu.
+ - không sử dụng abstract trong Interface.
+ - Nên test hết các trường hợp.
+ - Nên viết hướng dẫn sử dụng phần mềm.
+ - Chưa xử lý lỗi.
 
