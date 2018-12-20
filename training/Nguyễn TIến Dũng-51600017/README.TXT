@@ -24,3 +24,9 @@ Lê Nguyên Hoài Nghĩa
 - Bạn có thể đưa phần hướng dẫn ra ngoài file README nhiều hơn được không, mình download nhiều file mỏi tay quá.
 
 ========================
+Nguyễn Trần Quốc Vương
+- Code có nhiều comment cho nên dễ hiểu
+- Hướng dẫn sử dụng ở README cho tiện hơn
+- Có nhiều testcase hơi bị trùng nhau
+
+========================
