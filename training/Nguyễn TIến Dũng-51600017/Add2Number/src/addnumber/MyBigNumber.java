@@ -42,6 +42,7 @@ public class MyBigNumber {
         int t;  // tổng tạm của d1 và d2;
         int k;   // tổng tạm không có số nhớ
         int remember = 0;    // nhớ nếu t lớn hơn hoặc bằng 10
+        int remember1 = 0; // biến tạm
         final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
         final boolean flag1;// biến để lưu dữ kết quả xét chuỗi s1 
         final boolean flag2;// biến để lưu dữ kết quả xét chuỗi s2
@@ -81,6 +82,7 @@ public class MyBigNumber {
             d1 = c1 - '0';//Số tại vị trí index1
             d2 = c2 - '0';//Số tại vị trí index2
 
+            remember1 = remember;
             t = d1 + d2 + remember;//Tổng tạm bằng số tại vị trí index1 + số tại vị trí index2 + số nhớ remember
             k = d1 + d2;
 
@@ -91,8 +93,11 @@ public class MyBigNumber {
             if (i == 0) {
                 conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " được " + k 
                     + " , " + " ghi " + (t % 10) + " , " + " nhớ " + remember + ", kết quả : " + finalResult + "\n";
+            } else if (i == (maxLen - 1) && t >= 10) {
+                 conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
+                    + " được " + t + " , " + "ghi " + t + " , " + "nhớ " + remember + ", kết quả : 1" + finalResult + "\n";
             } else {
-                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember 
+                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
                     + " được " + t + " , " + "ghi " + (t % 10) + " , " + "nhớ " + remember + ", kết quả : " + finalResult + "\n";
             }
             step = step + conver;
