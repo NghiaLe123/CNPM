@@ -89,11 +89,11 @@ public class MyBigNumber {
             remember = t / 10; // số nhớ
 
             if (i == 0) {
-                conver = "Step " + i + " : " + d1 + " + " + d2 + " = " + k 
-                    + " , " + " Remember " + remember + " , " + " Result " + finalResult + "\n";
+                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " được " + k 
+                    + " , " + " ghi " + (t % 10) + " , " + " nhớ " + remember + ", kết quả : " + finalResult + "\n";
             } else {
-                conver = "Step " + i + " : " + d1 + " + " + d2 + " + " + remember 
-                    + " = " + t + " , " + " Remember " + remember + " , " + " Result " + finalResult + "\n";
+                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember 
+                    + " được " + t + " , " + "ghi " + (t % 10) + " , " + "nhớ " + remember + ", kết quả : " + finalResult + "\n";
             }
             step = step + conver;
         }
