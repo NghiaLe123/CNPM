@@ -9,7 +9,7 @@ Chương trình có 2 trường hợp nhận diện lỗi:
 1. Lỗi xuất hiện số âm trong s1 hoặc s2.
 2. Lỗi xuất hiện kí tự không phải số trong s1 hoặc s2.
 
-Hướng dẫn chạy trên cmd:
+Hướng dẫn chạy trên console:
 
 Download file MyBigNumber.jar và Sum2Number.bat, sau đó cho 2 file cùng 1 folder.
 
