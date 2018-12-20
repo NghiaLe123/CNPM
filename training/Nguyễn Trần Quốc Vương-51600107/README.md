@@ -1,6 +1,6 @@
 # CNPM
 
-+ Vui lòng tải file Add2Number.jar tại đây: https://drive.google.com/open?id=1SacPMEttPCniLn0rL0TWdYaAqYAdLbHX
++ Vui lòng tải file Add2Number.jar tại đây: https://drive.google.com/open?id=1sBJe2RJh92jssrgHyYlOMxyaHoRUJgD9
 + Các bước thực hiện:
   -B1: Sau mở phần mềm lên thì nhập số thứ nhất và số thứ 2.
   -B2: Sau đó nhấn OK thì sẽ cho ra kết quả và các bước thực hiện phép tính.
