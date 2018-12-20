@@ -12,5 +12,5 @@ public interface IReceiver {
         * In từng bước cộng 2 số.
         */
     
-    public abstract void send(String msg);
+    public void send(String msg);
 }
