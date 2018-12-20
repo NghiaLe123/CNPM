@@ -55,6 +55,7 @@ private IReceiver ireceiver;
         int t; // tổng của d1 và d2
         int k; // tổng tạm không có số nhớ
         int sonho = 0; // nếu lớn hơn hoặc bằng 10 thì cộng vài sonho
+        int sonho1 = 0; // biến nhớ tạm
         
         final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
         final boolean flag1;// Lưu dữ kết quả xét chuỗi s1 
@@ -89,6 +90,7 @@ private IReceiver ireceiver;
 
             d1 = c1 - '0';
             d2 = c2 - '0';
+            sonho1 = sonho;
             t = d1 + d2 + sonho;
             k = d1 + d2;
 
@@ -99,12 +101,16 @@ private IReceiver ireceiver;
             
             if (i == 0) {
                 v = i + 1;
-                conver = "Bước " + v + " : Lấy " + d1 + " + " + d2 + " = " + k 
-                    + " , " + " Ghi " + finalkq + " , " + " Nhớ " + sonho + " , Thời gian thực hiện : " + stringDate + "\n";
+                conver = "Bước " + v + " : lấy " + d1 + " cộng " + d2 + " được " + k 
+                    + " , " + " ghi " + (t % 10) + " , " + " nhớ " + sonho + ", kết quả : " + finalkq + "\n";
+            } else if (i == (maxLen - 1) && t >= 10) {
+                v = i + 1;
+                 conver = "Bước " + v + " : lấy " + d1 + " cộng " + d2 + " cộng " + sonho1 
+                    + " được " + t + " , " + "ghi " + t + " , " + "nhớ " + sonho + ", kết quả : 1" + finalkq + "\n";
             } else {
                 v = i + 1;
-                conver = " Bước " + v + " : Lấy " + d1 + " + " + d2 + " + " + sonho 
-                    + " = " + t + " , " + " Ghi " + finalkq + " , " + " Nhớ " + sonho + " , Thời gian thực hiện : " + stringDate + "\n";
+                conver = "Bước " + v + " : lấy " + d1 + " cộng " + d2 + " cộng " + sonho1 
+                    + " được " + t + " , " + "ghi " + (t % 10) + " , " + "nhớ " + sonho + ", kết quả : " + finalkq + "\n";
             }
             step = step + conver;
         }
