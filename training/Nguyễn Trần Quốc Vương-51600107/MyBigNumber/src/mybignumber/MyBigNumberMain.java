@@ -16,7 +16,7 @@ public class MyBigNumberMain implements IReceiver {
 
         MyBigNumberMain main = new MyBigNumberMain();
         MyBigNumber s = new MyBigNumber(main);
-        String result = s.sum("23","12233");
+        String result = s.sum("2A3","12233");
         System.out.print("Final Result: " + result + "\n");
     }
     

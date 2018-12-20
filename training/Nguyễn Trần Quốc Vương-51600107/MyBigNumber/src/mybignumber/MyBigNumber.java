@@ -8,6 +8,8 @@ package mybignumber;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -57,21 +59,29 @@ private IReceiver ireceiver;
         int k; // tổng tạm không có số nhớ
         int sonho = 0; // nếu lớn hơn hoặc bằng 10 thì cộng vài sonho
         
-        for (int i = 0; i < len1; i++) { //Kiểm tra trong chuổi s1 có chữ hay không
-
-            if (Character.isLetter(s1.charAt(i))) {
-                // Nếu s1 có chữ hoặc kí tự thì sẽ dùng NumberFormatException
-                throw new NumberFormatException(" Vị Trí " + (i + 1) + " trong chuỗi " + s1
-                        + " là chữ hoặc kí tự");
-            }
+        final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
+        final boolean flag1;// Lưu dữ kết quả xét chuỗi s1 
+        final boolean flag2;// Lưu dữ kết quả xét chuỗi s2
+        
+        if (s1.contains("-")) {
+            this.ireceiver.send(" Có chứa số âm trong số thứ nhất " + "\n" + "Vui lòng nhập số nguyên dương");
+            throw new NumberFormatException("Phần mềm chưa hỗ trợ số âm");
         }
-        for (int i = 0; i < len2; i++) { //Kiểm tra trong chuổi s2 có chữ hay không
-
-            if (Character.isLetter(s2.charAt(i))) {
-                // Nếu s2 có chữ hoặc kí tự thì sẽ dùng NumberFormatException
-                throw new NumberFormatException(" Vị Trí " + (i + 1) + " trong chuỗi " + s2
-                        + " là chữ hoặc kí tự");
-            }
+        if (s2.contains("-")) {
+            this.ireceiver.send(" Có chứa số âm trong số thứ hai " + "\n" + "Vui lòng nhập số nguyên dương");
+            throw new NumberFormatException("Phần mềm chưa hỗ trợ số âm");
+        }
+        
+        flag1 = s1.matches(pattern);
+        flag2 = s2.matches(pattern);
+        if (!flag1) {
+                this.ireceiver.send("Có chứa kí tự đặc biệt trong số thứ nhất : " + s1 + "\n" + "Vui lòng nhập lại");
+                throw new NumberFormatException("Vui lòng không chứa kí tự đặc biệt hoặc chữ trong số thứ nhất : " + s1);
+        }
+        
+        if (!flag2) {
+                this.ireceiver.send("Có chứa kí tự đặc biệt trong số thứ nhất : " + s2 + "\n" + "Vui lòng nhập lại");
+                throw new NumberFormatException("Vui lòng không chứa kí tự đặc biệt hoặc chữ trong số thứ 2 : " + s2);
         }
 
         for (int i = 0; i < maxLen; i++) { //// Lặp maxLen lần
