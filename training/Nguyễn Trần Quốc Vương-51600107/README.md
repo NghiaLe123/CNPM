@@ -16,3 +16,10 @@
  ---------------------------------------
  
  Lê Nguyên Hoài Nghĩa
+ - Code có comment dễ hiểu.
+ - Sửa lại comment trong file test.
+ - Không được viết abstract trong Interface.
+ - Code test thiếu nhiều trường hợp.
+ 
+
+
