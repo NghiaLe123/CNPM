@@ -5,7 +5,7 @@ import mybignumber.MyBigNumber;
 import org.junit.Test;
 
 /**
- * Tác giả:  Nguyễn Tiến Dũng.
+ * Tác giả:  NGUYỄN TRẦN QUỐC VƯƠNG.
  * DesCription.
  * IReceiver là interface cho phép in từng bước cộng 2 số
  * Hàm send cho hàm cho phép ta in ra chuỗi
@@ -21,7 +21,7 @@ public class MyBigNumberTest implements IReceiver {
     
     @Test
     
-    public void testSum_N_1() {
+    public void testSum_N_1() { // Trường hợp cộng 2 số có 1 chữ số
         MyBigNumber myClass = new MyBigNumber(this);
 
         String sum = myClass.sum("5", "9");
@@ -31,7 +31,7 @@ public class MyBigNumberTest implements IReceiver {
     
     @Test
     
-    public void testSum_N_2() {
+    public void testSum_N_2() { // Trường hợp cộng 2 số có 3 chữ số
     	MyBigNumber myClass = new MyBigNumber(this);
 
         String sum = myClass.sum("123", "331");
@@ -41,13 +41,53 @@ public class MyBigNumberTest implements IReceiver {
     
     @Test
     
-    public void testSum_N_3() {
+    public void testSum_N_3() { // Trường hợp chứa chữ
     	MyBigNumber myClass = new MyBigNumber(this);
 
         String sum = myClass.sum("123A", "9");
 
         assertEquals("132", sum);
     }
+    
+    @Test
+    
+    public void testSum_N_4() { // Trường hợp chứa số âm
+    	MyBigNumber myClass = new MyBigNumber(this);
+
+        String sum = myClass.sum("-2", "9");
+
+        assertEquals("7", sum);
+    }
+    
+    @Test
+    
+    public void testSum_N_5() { // Trường hợp chứa kí tự đặc biêt
+    	MyBigNumber myClass = new MyBigNumber(this);
+
+        String sum = myClass.sum("abc+1", "9");
+
+        assertEquals("7", sum);
+    }
+    @Test
+    
+    public void testSum_N_6() { // Trường hợp chứa dấu
+    	MyBigNumber myClass = new MyBigNumber(this);
+
+        String sum = myClass.sum("123.22", "92");
+
+        assertEquals("7", sum);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

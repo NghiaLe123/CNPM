@@ -11,7 +11,7 @@ import mybignumber.MyBigNumber;
 
 /**
  *
- * @author User
+ * @author NGUYỄN TRẦN QUỐC VƯƠNG
  */
 public class CONG2SO extends javax.swing.JFrame implements IReceiver{
 

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mybignumber;
 
 import java.text.DateFormat;
@@ -12,8 +7,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
- * @author User
+ * Tác giả:  Nguyễn Trần Quốc Vương.
+ * DesCription.
+ * Class MyBigNumber là lớp để Cộng 2 số lớn bằng 2 chuỗi.
+ * Hàm sum là hàm để thực hiện phép cộng 2 chuỗi số.
  */
 public class MyBigNumber {
 private IReceiver ireceiver;

@@ -1,10 +1,12 @@
 package mybignumber;
+
 /**
- * Ty NTQV
+ * Tác giả: Nguyễn Trần Quốc Vương
  * DesCription.
  * IReceiver là interface cho phép in từng bước cộng 2 số
  * Hàm send cho hàm cho phép ta in ra chuỗi
  */
+
 public interface IReceiver {
 
     /*
@@ -17,5 +19,5 @@ public interface IReceiver {
      */
     
 
-    public abstract void send(String msg);
+    public void send(String msg);
 }
