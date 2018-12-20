@@ -18,3 +18,9 @@ Nguyễn Văn Hải
 - Testcase của bạn còn chưa đầy đủ các trường hợp ngoại lệ có thể xảy ra lúc người dùng nhập sai
 
 ========================
+
+Lê Nguyên Hoài Nghĩa
+- Code của bạn khá tốt, có chú thích, comment dễ hiểu.
+- Bạn có thể đưa phần hướng dẫn ra ngoài file README nhiều hơn được không, mình download nhiều file mỏi tay quá.
+
+========================
