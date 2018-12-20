@@ -17,6 +17,6 @@ public interface IReceiver {
      * @since 2018
      */
 
-    public abstract void send(String msg);
+     void send(String msg);
 
 }
