@@ -1,5 +1,6 @@
 # CNPM
 
+# Hướng dẫn sử dụng phần mềm
 + Vui lòng tải file Add2Number.jar tại đây: https://drive.google.com/open?id=1sBJe2RJh92jssrgHyYlOMxyaHoRUJgD9
 + Các bước thực hiện:
   -B1: Sau mở phần mềm lên thì nhập số thứ nhất và số thứ 2.
