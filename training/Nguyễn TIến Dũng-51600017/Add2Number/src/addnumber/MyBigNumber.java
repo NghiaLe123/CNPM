@@ -57,11 +57,11 @@ public class MyBigNumber {
         int remember1 = 0; // biến tạm
          
         // Kiểm tra chuỗi null
-        if(s1.isEmpty() || s1 == null) {
+        if(s1.isEmpty()) {
             s1 = "0";
         }
 
-        if(s2.isEmpty() || s2.equals("null")) {
+        if(s2.isEmpty()) {
             s2 = "0";        
         }
 
