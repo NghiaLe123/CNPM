@@ -1,5 +1,6 @@
-package addnumber;
+package test;
 
+import addnumber.IReceiver;
 import addnumber.MyBigNumber;
 
 /**
