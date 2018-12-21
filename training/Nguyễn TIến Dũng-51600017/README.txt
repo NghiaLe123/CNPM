@@ -4,7 +4,7 @@ BUILD OUTPUT DESCRIPTION
 
 Hướng dẫn : 
 1. Tải phần mềm tại link : https://drive.google.com/open?id=1bmuvuYGC2IZ60V5LdjcUCbc742dOgl9E
-
+ ========================
 2. 
   * Cách sử dụng 1 chạy file Add2Number.jar:
     B1:Nhâp số thứ nhất vào ô bên cạnh chữ "Nhập số thứ 1".
@@ -16,12 +16,18 @@ Hướng dẫn :
     B2: gõ lệnh: sum s1 s2
   - Trong đó : s1 là chuỗi số thứ nhất bạn cần nhập.
                s2 là chuỗi số thứ hai bạn cần nhập.
-               
+
+ ========================
+
 3. Xem các testcase tại : Các yêu cầu của khách hàng đã hoàn thành.xlsx và esult_TestCase.PNG
 
+ ========================
+ 
 4. Để kiểm tra kết quả testcase : bạn mở cmd và gõ : 
   - javac MyBigNumBerTest.java
   - java MyBigNumberTest
+  
+  ========================
   
 5.Các lỗi thường gặp phải khi sử dụng phần mềm và phải tránh các trường hợp sau đây:
   - 2 chuỗi số nhập vào KHÔNG ĐƯỢC chứa chữ.
@@ -30,6 +36,8 @@ Hướng dẫn :
      Ví dụ: s1 = -232 và s2 = 3123 || hay s1 = 12 và s2 =-2342 || hay s1 = -2132232 và s2 = -56456
   - 2 chuỗi nhập vào KHÔNG ĐƯỢC chứa kí tự đặc biệt.
       ví dụ: s1 = %23s4 và s2 = 422^$% || hay s1 = 324 và s2 = 34$ || hay s1 = $#$2 và  s2 = 13123 
+      
+      ========================
       
 6. Chúc bạn có một trải nghiệm tuyệt vời :))
 ========================
