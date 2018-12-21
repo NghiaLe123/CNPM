@@ -54,7 +54,7 @@ public class MyBigNumber {
         } 
         
         if (s2.charAt(0) == '-') {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ số âm trong s2 : " + s2);
+                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứa số âm trong s2 : " + s2);
                 throw new NumberFormatException("Vui lòng không chứ số âm trong s2");
         }
         
@@ -62,13 +62,13 @@ public class MyBigNumber {
         flag1 = s1.matches(pattern);
         flag2 = s2.matches(pattern);
         if (!flag1) {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
+                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứa kí tự đặc biệt hoặc chữ trong s1 : " + s1);
                 throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
         }
         
         if (!flag2) {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
-                throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
+                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứa kí tự đặc biệt hoặc chữ trong s2 : " + s2);
+                throw new NumberFormatException("Vui lòng không chứa kí tự đặc biệt hoặc chữ trong s2 : " + s2);
         }
         
         //// Lặp maxLen lần
