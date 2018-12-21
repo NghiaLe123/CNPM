@@ -13,9 +13,14 @@ Hướng dẫn :
 4. Để kiểm tra kết quả testcase : bạn mở cmd và gõ : 
   - javac MyBigNumBerTest.java
   - java MyBigNumberTest
+5. Để chạy chương trình bằng cmd bạn cần thực hiện các thao tác sau:
+  - Mở cmd và cd đến thư mục.
+  - gõ lệnh : javac Sum.java
+  - Tiếp theo : java Sum "s1" "s2"
+  - Trong đó : s1 là chuỗi số thứ nhất bạn cần nhập.
+               s2 là chuỗi số thứ hai bạn cần nhập.
 
-
-
+6. Chúc bạn có một trải nghiệm tuyệt vời :))
 ========================
 
 
