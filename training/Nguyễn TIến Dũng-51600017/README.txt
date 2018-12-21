@@ -3,7 +3,7 @@ BUILD OUTPUT DESCRIPTION
 ========================
 
 Hướng dẫn : 
-1. Tải phần mềm tại link : https://drive.google.com/open?id=1bmuvuYGC2IZ60V5LdjcUCbc742dOgl9E
+1. Tải phần mềm tại link : https://drive.google.com/open?id=1AQp_ktXqvP5U72DxGEtwnHsDNOnOH9dw
  ========================
 2. 
   * Cách sử dụng 1 chạy file Add2Number.jar:
