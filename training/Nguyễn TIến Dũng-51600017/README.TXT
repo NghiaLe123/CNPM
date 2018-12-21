@@ -4,7 +4,7 @@ BUILD OUTPUT DESCRIPTION
 
 Hướng dẫn : 
 1. Tải phần mềm tại link : https://drive.google.com/open?id=1BFRqJ7nkMSM5SMPcIMlciR2Eex_fLy0y
-2. Cách sử dụng:
+2. Cách sử dụng chạy file Add2Number.jar:
   B1:Nhâp số thứ nhất vào ô bên cạnh chữ "Nhập số thứ 1".
   B2:Nhâp số thứ hai vào ô bên cạnh chữ "Nhập số thứ 2"
   B3:Nhấn vào nút sum để thực hiện phép toán. Kết quả và các bước thực hiện sẽ được in ra màn hình phía bên dưới
