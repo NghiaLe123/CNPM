@@ -25,7 +25,7 @@ Hướng dẫn :
 
 
 ========================
-CONFIRM MY FRIEND
+REVIEW AND CONFIRM MY FRIENDS
 ========================
 
 Nguyễn Văn Hải 
