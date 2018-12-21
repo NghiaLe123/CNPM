@@ -74,8 +74,7 @@ private IReceiver ireceiver;
             throw new NumberFormatException(" Vui long khong chua so am trong " + s2);
         }
         
-        flag1 = s1.matches(pattern);
-        flag2 = s2.matches(pattern);
+        
         
         // Kiểm tra kí tự đặc biệt hoặc chữ
         if (m1.find()) {
