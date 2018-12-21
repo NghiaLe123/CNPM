@@ -1,5 +1,8 @@
 package addnumber;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Tác giả:  Nguyễn Tiến Dũng.
  * DesCription.
@@ -30,6 +33,10 @@ public class MyBigNumber {
         String finalResult = "";
         String step = "";// Chuỗi step sẽ làm tham số cho hàm send của interface
         String conver = "";        
+        Pattern p = Pattern.compile("\\D");
+        Matcher m1 = p.matcher(s1);
+        Matcher m2 = p.matcher(s2);
+        int errorPos; // Vị trí của lỗi
         int length1 = s1.length();// Độ dài của chuỗi s1
         int length2 = s2.length();// Độ dài của chuỗi s2
         final int maxLen = (length1 > length2) ? length1 : length2; // Xác định độ dài lớn nhất của 2 chuỗi
@@ -59,16 +66,16 @@ public class MyBigNumber {
         }
         
         // Kiểm tra kí tự đặc biệt hoặc chữ
-        flag1 = s1.matches(pattern);
-        flag2 = s2.matches(pattern);
-        if (!flag1) {
+        if (m1.find()) {
+            errorPos = m1.start() + 1;
                 this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
-                throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
+                throw new NumberFormatException(errorPos+"");   
         }
         
-        if (!flag2) {
+        if (m2.find()) {
+            errorPos = m2.start() + 1;
                 this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
-                throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
+                throw new NumberFormatException(errorPos+"");
         }
         
         //// Lặp maxLen lần
