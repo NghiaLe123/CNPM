@@ -24,7 +24,19 @@ public class MyBigNumberTest implements IReceiver {
      *
      * @param args
      */
-    
+    public static void main(String[] args){
+        TestcaseN_1();
+        TestcaseN_2();
+        TestcaseN_3();
+        TestcaseN_4();
+        TestcaseN_5();
+        TestcaseN_6();
+        TestcaseN_7();
+        TestcaseN_8();
+        TestcaseN_9();
+        TestcaseN_10();
+        TestcaseN_11();
+    }
     //Trường hợp cộng 2 số có 3 chữ số
 
     /**
