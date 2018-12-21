@@ -19,6 +19,11 @@ public class MyBigNumberTest implements IReceiver {
      */
     
     public static int i = 1;
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args){
         TestcaseN_1();
         TestcaseN_2();
@@ -33,11 +38,21 @@ public class MyBigNumberTest implements IReceiver {
         TestcaseN_11();
     }
     //Trường hợp cộng 2 số có 3 chữ số
-    public static void TestcaseN_1(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_1(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("123", "978");
+            String Result = "1101";
+            if(Result.equals(sum)) {
+                System.out.println("True");
+            } else {
+                System.out.println("False");
+            }
         }catch(NumberFormatException ex){
             System.out.println("Vị trí : " + ex.getMessage());
         }
@@ -45,40 +60,68 @@ public class MyBigNumberTest implements IReceiver {
     }
 
     //Trường hợp cộng 2 chữ số cho 3 chữ số
-    public static void TestcaseN_2(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_2(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("13", "978");
+            String Result = "991";
+            if(Result.equals(sum)) {
+                System.out.println("True");
+            } else {
+                System.out.println("False");
+            }
         }catch(NumberFormatException ex){
             System.out.println("Vị trí : " + ex.getMessage());
         }
     }
     
     //Trường hợp cộng 3 chữ số cho 2 chữ số
-    public static void TestcaseN_3(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_3(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("1234", "78");
+            String Result = "1312";
+            if(Result.equals(sum)) {
+                System.out.println("True");
+            } else {
+                System.out.println("False");
+            }
         }catch(NumberFormatException ex){
             System.out.println("Vị trí :" + ex.getMessage());
         }
     }
     
     //Trường hợp có chứa chữ
-    public static void TestcaseN_4(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_4(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("12A", "978");
+            String sum = mybignumber.sum("", "0");
         }catch(NumberFormatException ex){
             System.out.println("Vị trí : " + ex.getMessage() + "\n");
         }
     }
     
     //Trường hợp có chứa kí tự đặc biệt
-    public static void TestcaseN_5(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_5(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
@@ -89,7 +132,11 @@ public class MyBigNumberTest implements IReceiver {
     }
     
     //Trường hợp có chứa số âm
-    public static void TestcaseN_6(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_6(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
@@ -100,7 +147,11 @@ public class MyBigNumberTest implements IReceiver {
     }
     
     //Trường hợp s1 la chu
-    public static void TestcaseN_7(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_7(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
@@ -111,7 +162,11 @@ public class MyBigNumberTest implements IReceiver {
     }
     
     //Trường hợp có kí tự đặc biệt
-    public static void TestcaseN_8(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_8(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
@@ -121,6 +176,9 @@ public class MyBigNumberTest implements IReceiver {
         }
     }
     
+    /**
+     *
+     */
     public static void TestcaseN_9(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
@@ -132,7 +190,11 @@ public class MyBigNumberTest implements IReceiver {
     }
     
     //Chua dau .
-    public static void TestcaseN_10(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_10(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
@@ -143,7 +205,11 @@ public class MyBigNumberTest implements IReceiver {
     }
     
      //Chua dau ,
-    public static void TestcaseN_11(){
+
+    /**
+     *
+     */
+        public static void TestcaseN_11(){
         try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
@@ -153,6 +219,7 @@ public class MyBigNumberTest implements IReceiver {
         }
     }
     
+    @Override
     public void send(final String msg) {
         //TODO Auto-generated method stub
         System.out.println("case " + i + ":" + msg);
