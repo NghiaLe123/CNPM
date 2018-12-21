@@ -33,7 +33,7 @@ public class MyBigNumber {
         String finalResult = "";
         String step = "";// Chuỗi step sẽ làm tham số cho hàm send của interface
         String conver = "";        
-        Pattern p = Pattern.compile("\\D");
+        Pattern p = Pattern.compile("\\D"); // Chuỗi đại diện cho kí tự số từ [0-9]
         Matcher m1 = p.matcher(s1);
         Matcher m2 = p.matcher(s2);
         int errorPos; // Vị trí của lỗi
@@ -50,9 +50,6 @@ public class MyBigNumber {
         int k;   // tổng tạm không có số nhớ
         int remember = 0;    // nhớ nếu t lớn hơn hoặc bằng 10
         int remember1 = 0; // biến tạm
-        final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
-        final boolean flag1;// biến để lưu dữ kết quả xét chuỗi s1 
-        final boolean flag2;// biến để lưu dữ kết quả xét chuỗi s2
          
         // Kiểm tra số âm
         if (s1.charAt(0) == '-') {
@@ -100,7 +97,7 @@ public class MyBigNumber {
                 conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " được " + (d1 + d2)
                     + " , " + " ghi " + (t % 10) + " , " + " nhớ " + remember + ", kết quả : " + finalResult + "\n";
             } else if (i == (maxLen - 1) && t >= 10) {
-                 conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
+                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
                     + " được " + t + " , " + "ghi " + t + " , " + "nhớ " + remember + ", kết quả : 1" + finalResult + "\n";
             } else {
                 conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
