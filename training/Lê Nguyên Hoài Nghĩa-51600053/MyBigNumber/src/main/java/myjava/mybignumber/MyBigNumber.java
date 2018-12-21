@@ -60,12 +60,12 @@ public class MyBigNumber {
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
         
-            throw new NumberFormatException("Vị trí " + (m1.start() + 1) + " trong " + s1 + " không phải kí tự số");
+            throw new NumberFormatException("" + (m1.start() + 1));
         }
         
         if (b2) {
 
-            throw new NumberFormatException("Vị trí " + (m2.start() + 1) + " trong " + s2 + " không phải kí tự số");
+            throw new NumberFormatException("" + (m2.start() + 1));
         }
         
         

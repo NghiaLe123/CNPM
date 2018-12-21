@@ -1,158 +1,132 @@
 package myjava.mybignumber;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
+
 
 public class MyBigNumberTest implements IReceiver {
 
     @Test
     public void testSum_N_1() {
-    	try {
+    	
         MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_1 : " + myClass.sum("2","7"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        String sum =  myClass.sum("2","7");
+        assertEquals("9", sum);
     }
     
-    @Test
+    @Test(expected = NumberFormatException.class)
     public void testSum_N_2() {
-    	try {
+
         MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_2 : " + myClass.sum("2","-2"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        String sum = myClass.sum("2","-2");
+
     }
     
     @Test 
     public void testSum_N_3() {
-    	try {
+    	
         MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_3: " + myClass.sum("12","9"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        String sum = myClass.sum("12","9");
+        assertEquals("21", sum);      
     }
 
-    @Test 
+    @Test(expected = NumberFormatException.class) 
     public void testSum_N_4() {
-    	try {
+
         MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_4: " + myClass.sum("-12","123"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        String sum = myClass.sum("-12","123");
+    	
     }    
     
     
-    @Test 
+    @Test(expected = NumberFormatException.class) 
     public void testSum_N_5() {
-    	try {
+
         MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_5: " + myClass.sum("12a","123"));
-    	}
-    	
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        String sum = myClass.sum("12a","123");
+
     }
     
     
-    @Test 
+    @Test(expected = NumberFormatException.class)
     public void testSum_N_6() {
-    	try {
+
         MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_6: " + myClass.sum("123","abc"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        String sum = myClass.sum("123","abc");
+
     }
     
-    @Test 
+    @Test(expected = NumberFormatException.class) 
     public void testSum_N_7() {
-    	try {
-        MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_7: " + myClass.sum("13a","123a"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
-    }
-    
-    
-    @Test 
-    public void testSum_N_8() {
-    	try {
-        MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_8: " + myClass.sum("56-","-123"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
-    }
-    
-    @Test 
-    public void testSum_N_9() {
-    	try {
-        MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_9: " + myClass.sum("abc+1","13"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
-    }
-    
-    @Test 
-    public void testSum_N_10() {
-    	try {
-        MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_12: " + myClass.sum("$@@","@(@*$"));
-    	}
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
-    }
-    
-    @Test 
-    public void testSum_N_11() {
-    	try {
-        MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_11: " + myClass.sum("122.23","123.46"));
-    	}
     	
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum("13a","123a");
+
+    }
+    
+    
+    @Test(expected = NumberFormatException.class) 
+    public void testSum_N_8() {
+
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum("56-","-123");
+  
+
+    }
+    
+    @Test(expected = NumberFormatException.class) 
+    public void testSum_N_9() {
+    
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum("abc+1","13");
+  
+    }
+    
+    @Test(expected = NumberFormatException.class) 
+    public void testSum_N_10() {
+    
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum("$@@","@(@*$");
+    	
+    }
+    
+    @Test(expected = NumberFormatException.class) 
+    public void testSum_N_11() {
+
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum("122.23","123.46");
+
     }
     
     @Test 
     public void testSum_N_12() {
-    	try {
+
         MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_12: " + myClass.sum("","123"));
-    	}
-    	
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        String sum = myClass.sum("","123");
+        assertEquals("123", sum);      
+
+
     } 
 
     @Test 
     public void testSum_N_13() {
-    	try {
+
         MyBigNumber myClass = new MyBigNumber(this);
-        System.out.println("TEST_N_13: " + myClass.sum("188","11"));
-    	}
-    	
-    	catch (NumberFormatException ex) {
-    		System.out.println("Lỗi: " + ex.getMessage());
-    	}
+        String sum = myClass.sum("188","11");
+        assertEquals("199", sum);      
+
     } 
+    
+    @Test 
+    public void testSum_N_14() {
+
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum("18","11");
+        assertEquals("29", sum);      
+
+
+    }    
     
     @Override
     
