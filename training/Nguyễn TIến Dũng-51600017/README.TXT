@@ -27,16 +27,22 @@ Nguyễn Văn Hải
 - Đầu tiển mình thấy code của bạn sạch và giải thích khá dễ hiểu và app có hướng dẫn chi tiết giúp người dùng dễ dàng thực hiện. Những trong đó mình có vài ý kiến đóng góp là:
 - Testcase của bạn còn chưa đầy đủ các trường hợp ngoại lệ có thể xảy ra lúc người dùng nhập sai
 
+==> Nguyễn Tiến Dũng : Đã nhận và chỉnh sửa . Cảm ơn bạn đã góp ý. 21/12/2018 08:48 
+
 ========================
 
 Lê Nguyên Hoài Nghĩa
 - Code của bạn khá tốt, có chú thích, comment dễ hiểu.
 - Bạn có thể đưa phần hướng dẫn ra ngoài file README nhiều hơn được không, mình download nhiều file mỏi tay quá.
 
+==> Nguyễn Tiến Dũng : Đã nhận và chỉnh sửa . Cảm ơn bạn đã góp ý. 21/12/2018 08:48
+
 ========================
 Nguyễn Trần Quốc Vương
 - Code có nhiều comment cho nên dễ hiểu
 - Hướng dẫn sử dụng ở README cho tiện hơn
 - Có nhiều testcase hơi bị trùng nhau
+
+==> Nguyễn Tiến Dũng : Đã nhận và chỉnh sửa . Cảm ơn bạn đã góp ý. 21/12/2018 08:48
 
 ========================
