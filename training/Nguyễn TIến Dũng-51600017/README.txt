@@ -11,11 +11,13 @@ Hướng dẫn :
     B2:Nhâp số thứ hai vào ô bên cạnh chữ "Nhập số thứ 2"
     B3:Nhấn vào nút sum để thực hiện phép toán. Kết quả và các bước thực hiện sẽ được in ra màn hình phía bên dưới
     B4:Nhấn vào nút clean để xóa phép toán đang thực hiện và thực hiện phép toán mới nếu muốn.
+    
   * Cách sử dụng 2 :
     B1: Mở chương trình bạn vừa tải về và mở cmd , cd vào thư mục đó.
     B2: gõ lệnh: sum s1 s2
-  - Trong đó : s1 là chuỗi số thứ nhất bạn cần nhập.
+      - Trong đó : s1 là chuỗi số thứ nhất bạn cần nhập.
                s2 là chuỗi số thứ hai bạn cần nhập.
+    B3: Giao diện phần mềm mở ra . bạn click vào nút Sum để xem kết quả
 
  ========================
 
