@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mybignumber;
 import mybignumber.MyBigNumber;
 
 /**
- *
- * @author User
+ * Tác giả:  Nguyễn Trần Quốc Vương.
+ * DesCription.
+ * Class MyBigNumberMain là lớp để Cộng 2 số lớn bằng 2 chuỗi.
+ * Gọi hàm sum để thực hiện.
  */
 public class MyBigNumberMain implements IReceiver {
     

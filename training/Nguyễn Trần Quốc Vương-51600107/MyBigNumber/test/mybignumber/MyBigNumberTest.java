@@ -7,8 +7,8 @@ import org.junit.Test;
 /**
  * Tác giả:  NGUYỄN TRẦN QUỐC VƯƠNG.
  * DesCription.
- * IReceiver là interface cho phép in từng bước cộng 2 số
- * Hàm send cho hàm cho phép ta in ra chuỗi
+ * MyBigNumberTest là class cho phép test các trường hợp của cộng 2 số
+ * in ra các lỗi và kết quá
  */
 public class MyBigNumberTest implements IReceiver {
 
@@ -27,7 +27,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("1", "3");
         }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage());
+            System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }
     }
     
@@ -39,7 +39,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("12221312", "23232");
         }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage());
+            System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }
     }
     
@@ -51,7 +51,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("12A", "978");
         }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage() + "\n");
+            System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }
     }
     
@@ -63,7 +63,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("-122", "978");
         }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage() + "\n");
+            System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }
     }
     
@@ -73,9 +73,9 @@ public class MyBigNumberTest implements IReceiver {
     	try{
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("12-", "978");
+            String sum = mybignumber.sum("12=", "978");
         }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage() + "\n");
+             System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }
     }
     @Test
@@ -86,23 +86,9 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("123.456", "124");
         }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage() + "\n");
+            System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     public void send(final String msg) {

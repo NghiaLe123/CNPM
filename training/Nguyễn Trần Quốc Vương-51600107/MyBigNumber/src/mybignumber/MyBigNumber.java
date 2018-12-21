@@ -39,6 +39,10 @@ private IReceiver ireceiver;
         int maxLen = (len1 > len2) ? len1 : len2;
         String conver = ""; 
         String step = "";// Chuỗi step sẽ làm tham số cho hàm send của interface
+        Pattern p = Pattern.compile("\\D"); // Chuỗi đại diện cho kí tự số từ [0-9]
+        final Matcher m1 = p.matcher(s1);
+        final Matcher m2 = p.matcher(s2);
+        int errorPos; // Vị trí của lỗi
         int v;
         long start;
         long end;
@@ -62,24 +66,28 @@ private IReceiver ireceiver;
         final boolean flag2;// Lưu dữ kết quả xét chuỗi s2
         
         if (s1.contains("-")) {
-            this.ireceiver.send(" Có chứa số âm trong số thứ nhất " + "\n" + "Vui lòng nhập số nguyên dương");
-            throw new NumberFormatException("Phần mềm chưa hỗ trợ số âm");
+            this.ireceiver.send(" Co chua so am trong so thu nhat ");
+            throw new NumberFormatException(" Vui long khong chua so am trong " + s1);
         }
         if (s2.contains("-")) {
-            this.ireceiver.send(" Có chứa số âm trong số thứ hai " + "\n" + "Vui lòng nhập số nguyên dương");
-            throw new NumberFormatException("Phần mềm chưa hỗ trợ số âm");
+            this.ireceiver.send(" Co chua so am trong so thu hai ");
+            throw new NumberFormatException(" Vui long khong chua so am trong " + s2);
         }
         
         flag1 = s1.matches(pattern);
         flag2 = s2.matches(pattern);
-        if (!flag1) {
-                this.ireceiver.send("Có chứa kí tự đặc biệt trong số thứ nhất : " + s1 + "\n" + "Vui lòng nhập lại");
-                throw new NumberFormatException("Vui lòng không chứa kí tự đặc biệt hoặc chữ trong số thứ nhất : " + s1);
+        
+        // Kiểm tra kí tự đặc biệt hoặc chữ
+        if (m1.find()) {
+            errorPos = m1.start() + 1;
+            this.ireceiver.send(" Vui long khong chua ki tu dac biet hoac chu trong s1 : " + s1);
+            throw new NumberFormatException(errorPos + "");   
         }
         
-        if (!flag2) {
-                this.ireceiver.send("Có chứa kí tự đặc biệt trong số thứ nhất : " + s2 + "\n" + "Vui lòng nhập lại");
-                throw new NumberFormatException("Vui lòng không chứa kí tự đặc biệt hoặc chữ trong số thứ 2 : " + s2);
+        if (m2.find()) {
+            errorPos = m2.start() + 1;
+            this.ireceiver.send(" Vui long khong chua ki tu dac biet hoac chu trong s2 : " + s2);
+            throw new NumberFormatException(errorPos + "");
         }
 
         for (int i = 0; i < maxLen; i++) { //// Lặp maxLen lần
@@ -101,23 +109,23 @@ private IReceiver ireceiver;
             
             if (i == 0) {
                 v = i + 1;
-                conver = "Bước " + v + " : lấy " + d1 + " cộng " + d2 + " được " + k 
-                    + " , " + " ghi " + (t % 10) + " , " + " nhớ " + sonho + ", kết quả : " + finalkq + "\n";
+                conver = " Buoc " + v + " : Lay " + d1 + " Cong " + d2 + " Duoc " + k 
+                    + " , " + " Ghi " + (t % 10) + " , " + " Nho " + sonho + ", Ket qua : " + finalkq + "\n";
             } else if (i == (maxLen - 1) && t >= 10) {
                 v = i + 1;
-                 conver = "Bước " + v + " : lấy " + d1 + " cộng " + d2 + " cộng " + sonho1 
-                    + " được " + t + " , " + "ghi " + t + " , " + "nhớ " + sonho + ", kết quả : 1" + finalkq + "\n";
+                 conver = "Buoc " + v + " : Lay " + d1 + " Cong " + d2 + " cộng " + sonho1 
+                    + " Duoc " + t + " , " + " Ghi " + t + " , " + " Nho " + sonho + ", Ket qua : 1" + finalkq + "\n";
             } else {
                 v = i + 1;
-                conver = "Bước " + v + " : lấy " + d1 + " cộng " + d2 + " cộng " + sonho1 
-                    + " được " + t + " , " + "ghi " + (t % 10) + " , " + "nhớ " + sonho + ", kết quả : " + finalkq + "\n";
+                conver = " Buoc " + v + " : Lay " + d1 + " Cong " + d2 + " Cong " + sonho1 
+                    + " Duoc " + t + " , " + "Ghi " + (t % 10) + " , " + " Nho " + sonho + ", Ket qua : " + finalkq + "\n";
             }
             step = step + conver;
         }
         if (sonho > 0) {
             finalkq = sonho + finalkq; // Nếu mem còn dư thì cộng vào kết quả cuối
         }
-        step = "\n" + "Phép toán : " + s1 + " + " + s2 + "\n" + "Bước thực hiện : \n" + step;
+        step = "\n" + "Phép toán : " + s1 + " + " + s2 + "\n" + "Buoc thuc hien : \n" + step;
         this.ireceiver.send(step);
         
         return finalkq; // trả về kết quả cuối
