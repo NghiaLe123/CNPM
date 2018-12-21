@@ -49,26 +49,26 @@ public class MyBigNumber {
          
         // Kiểm tra số âm
         if (s1.charAt(0) == '-') {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ số âm trong s1 : " + s1);
+                this.ireceiver.send("Vui lòng không chứ số âm trong s1 : " + s1);
                 throw new NumberFormatException("Vui lòng không chứ số âm trong s1 : " + s1);
         } 
         
         if (s2.charAt(0) == '-') {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứa số âm trong s2 : " + s2);
-                throw new NumberFormatException("Vui lòng không chứ số âm trong s2");
+                this.ireceiver.send("Vui lòng không chứ số âm trong s2 : " + s2);
+                throw new NumberFormatException("Vui lòng không chứ số âm trong s2" + s2);
         }
         
         // Kiểm tra kí tự đặc biệt hoặc chữ
         flag1 = s1.matches(pattern);
         flag2 = s2.matches(pattern);
         if (!flag1) {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứa kí tự đặc biệt hoặc chữ trong s1 : " + s1);
+                this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
                 throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
         }
         
         if (!flag2) {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứa kí tự đặc biệt hoặc chữ trong s2 : " + s2);
-                throw new NumberFormatException("Vui lòng không chứa kí tự đặc biệt hoặc chữ trong s2 : " + s2);
+                this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
+                throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
         }
         
         //// Lặp maxLen lần
@@ -84,14 +84,13 @@ public class MyBigNumber {
 
             remember1 = remember;
             t = d1 + d2 + remember;//Tổng tạm bằng số tại vị trí index1 + số tại vị trí index2 + số nhớ remember
-            k = d1 + d2;
 
             // Lấy hàng đơn vị của t ghép vào phía trước kết quả
             finalResult = (t % 10) + finalResult;
             remember = t / 10; // số nhớ
 
             if (i == 0) {
-                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " được " + k 
+                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " được " + (d1 + d2)
                     + " , " + " ghi " + (t % 10) + " , " + " nhớ " + remember + ", kết quả : " + finalResult + "\n";
             } else if (i == (maxLen - 1) && t >= 10) {
                  conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
