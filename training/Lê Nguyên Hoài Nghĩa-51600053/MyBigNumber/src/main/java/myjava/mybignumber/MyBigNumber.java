@@ -46,20 +46,20 @@ public class MyBigNumber {
         
         Pattern p2 = Pattern.compile("[^0-9 ]");
         Matcher m2 = p2.matcher(s2);
-        boolean b2 = m2.find();
+        final boolean b2 = m2.find();
         
         if (s1.contains("-")) {
-        	
-            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s1);        	      	
+
+            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s1);
         }
         
         if (s2.contains("-")) {
-        	
-            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s2);        	      	
+
+            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s2);
         }
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
-        	
+
             throw new NumberFormatException("Lỗi xuất hiện kí tự khác số: " + s1);
         }
         

@@ -1,5 +1,8 @@
 package addnumber;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Tác giả:  Nguyễn Tiến Dũng.
  * DesCription.
@@ -30,6 +33,10 @@ public class MyBigNumber {
         String finalResult = "";
         String step = "";// Chuỗi step sẽ làm tham số cho hàm send của interface
         String conver = "";        
+        Pattern p = Pattern.compile("\\D"); // Chuỗi đại diện cho kí tự số từ [0-9]
+        final Matcher m1 = p.matcher(s1);
+        final Matcher m2 = p.matcher(s2);
+        int errorPos; // Vị trí của lỗi
         int length1 = s1.length();// Độ dài của chuỗi s1
         int length2 = s2.length();// Độ dài của chuỗi s2
         final int maxLen = (length1 > length2) ? length1 : length2; // Xác định độ dài lớn nhất của 2 chuỗi
@@ -43,32 +50,29 @@ public class MyBigNumber {
         int k;   // tổng tạm không có số nhớ
         int remember = 0;    // nhớ nếu t lớn hơn hoặc bằng 10
         int remember1 = 0; // biến tạm
-        final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
-        final boolean flag1;// biến để lưu dữ kết quả xét chuỗi s1 
-        final boolean flag2;// biến để lưu dữ kết quả xét chuỗi s2
          
         // Kiểm tra số âm
         if (s1.charAt(0) == '-') {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ số âm trong s1 : " + s1);
-                throw new NumberFormatException("Vui lòng không chứ số âm trong s1 : " + s1);
+            this.ireceiver.send("Vui lòng không chứ số âm trong s1 : " + s1);
+            throw new NumberFormatException("Vui lòng không chứ số âm trong s1 : " + s1);
         } 
         
         if (s2.charAt(0) == '-') {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ số âm trong s2 : " + s2);
-                throw new NumberFormatException("Vui lòng không chứ số âm trong s2");
+            this.ireceiver.send("Vui lòng không chứ số âm trong s2 : " + s2);
+            throw new NumberFormatException("Vui lòng không chứ số âm trong s2" + s2);
         }
         
         // Kiểm tra kí tự đặc biệt hoặc chữ
-        flag1 = s1.matches(pattern);
-        flag2 = s2.matches(pattern);
-        if (!flag1) {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
-                throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
+        if (m1.find()) {
+            errorPos = m1.start() + 1;
+            this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
+            throw new NumberFormatException(errorPos + "");   
         }
         
-        if (!flag2) {
-                this.ireceiver.send("NumberFormatException(\"Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
-                throw new NumberFormatException("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
+        if (m2.find()) {
+            errorPos = m2.start() + 1;
+            this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
+            throw new NumberFormatException(errorPos + "");
         }
         
         //// Lặp maxLen lần
@@ -84,21 +88,22 @@ public class MyBigNumber {
 
             remember1 = remember;
             t = d1 + d2 + remember;//Tổng tạm bằng số tại vị trí index1 + số tại vị trí index2 + số nhớ remember
-            k = d1 + d2;
 
             // Lấy hàng đơn vị của t ghép vào phía trước kết quả
             finalResult = (t % 10) + finalResult;
             remember = t / 10; // số nhớ
 
             if (i == 0) {
-                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " được " + k 
+                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " được " + (d1 + d2)
                     + " , " + " ghi " + (t % 10) + " , " + " nhớ " + remember + ", kết quả : " + finalResult + "\n";
             } else if (i == (maxLen - 1) && t >= 10) {
-                 conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
-                    + " được " + t + " , " + "ghi " + t + " , " + "nhớ " + remember + ", kết quả : 1" + finalResult + "\n";
+                conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
+                    + " được " + t + " , " + "ghi " + t + " , " + "nhớ " + remember 
+                    + ", kết quả : 1" + finalResult + "\n";
             } else {
                 conver = "Bước " + i + " : lấy " + d1 + " cộng " + d2 + " cộng " + remember1 
-                    + " được " + t + " , " + "ghi " + (t % 10) + " , " + "nhớ " + remember + ", kết quả : " + finalResult + "\n";
+                    + " được " + t + " , " + "ghi " + (t % 10) + " , " + "nhớ " + remember
+                    + ", kết quả : " + finalResult + "\n";
             }
             step = step + conver;
         }
