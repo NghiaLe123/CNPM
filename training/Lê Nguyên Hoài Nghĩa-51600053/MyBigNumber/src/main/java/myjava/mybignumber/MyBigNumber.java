@@ -59,13 +59,13 @@ public class MyBigNumber {
         }
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
-
-            throw new NumberFormatException("Lỗi xuất hiện kí tự khác số: " + s1);
+        
+            throw new NumberFormatException("Vị trí " + (m1.start() + 1) + " trong " + s1 + " không phải kí tự số");
         }
         
         if (b2) {
 
-            throw new NumberFormatException("Lỗi xuất hiện kí tự khác số: " + s2);
+            throw new NumberFormatException("Vị trí " + (m2.start() + 1) + " trong " + s2 + " không phải kí tự số");
         }
         
         
@@ -93,8 +93,11 @@ public class MyBigNumber {
         
         //kết thúc vòng lặp, nếu mem có giá trị thì ghép mem vào trước kq
         if (mem > 0) {
+
             finalResult = mem + finalResult;
         }
+        
+
         
         return finalResult;
     }
