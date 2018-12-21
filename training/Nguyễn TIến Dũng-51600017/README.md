@@ -3,22 +3,25 @@ BUILD OUTPUT DESCRIPTION
 ========================
 
 Hướng dẫn : 
-1. Tải phần mềm tại link : https://drive.google.com/open?id=1BFRqJ7nkMSM5SMPcIMlciR2Eex_fLy0y
-2. Cách sử dụng chạy file Add2Number.jar:
-  B1:Nhâp số thứ nhất vào ô bên cạnh chữ "Nhập số thứ 1".
-  B2:Nhâp số thứ hai vào ô bên cạnh chữ "Nhập số thứ 2"
-  B3:Nhấn vào nút sum để thực hiện phép toán. Kết quả và các bước thực hiện sẽ được in ra màn hình phía bên dưới
-  B4:Nhấn vào nút clean để xóa phép toán đang thực hiện và thực hiện phép toán mới nếu muốn.
+1. Tải phần mềm tại link : https://drive.google.com/open?id=1bmuvuYGC2IZ60V5LdjcUCbc742dOgl9E
+
+2. 
+  * Cách sử dụng 1 chạy file Add2Number.jar:
+    B1:Nhâp số thứ nhất vào ô bên cạnh chữ "Nhập số thứ 1".
+    B2:Nhâp số thứ hai vào ô bên cạnh chữ "Nhập số thứ 2"
+    B3:Nhấn vào nút sum để thực hiện phép toán. Kết quả và các bước thực hiện sẽ được in ra màn hình phía bên dưới
+    B4:Nhấn vào nút clean để xóa phép toán đang thực hiện và thực hiện phép toán mới nếu muốn.
+  * Cách sử dụng 2 :
+    B1: Mở chương trình bạn vừa tải về và mở cmd , cd vào thư mục đó.
+    B2: gõ lệnh: sum s1 s2
+  - Trong đó : s1 là chuỗi số thứ nhất bạn cần nhập.
+               s2 là chuỗi số thứ hai bạn cần nhập.
+               
 3. Xem các testcase tại : Các yêu cầu của khách hàng đã hoàn thành.xlsx và esult_TestCase.PNG
+
 4. Để kiểm tra kết quả testcase : bạn mở cmd và gõ : 
   - javac MyBigNumBerTest.java
   - java MyBigNumberTest
-5. Để chạy chương trình bằng cmd bạn cần thực hiện các thao tác sau:
-  - Mở cmd và cd đến thư mục.
-  - gõ lệnh : javac Sum.java
-  - Tiếp theo : java Sum "s1" "s2"
-  - Trong đó : s1 là chuỗi số thứ nhất bạn cần nhập.
-               s2 là chuỗi số thứ hai bạn cần nhập.
 
 6. Chúc bạn có một trải nghiệm tuyệt vời :))
 ========================
