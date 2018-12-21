@@ -1,7 +1,7 @@
 Phần mêm được build và test bằng Eclipse.
 Download file MyBigNumber.jar và Sum2Number.bat tại: https://drive.google.com/drive/folders/1XYg9rpMI215wDownodQQhZSF7QVjZJi5?usp=sharing
 
-Xem Coverage ở coverage.png.
+Xem Coverage ở Coverage.png.
 
 Hướng dẫn sử dụng phần mềm:
 Chạy file MyBigNumber.jar.
@@ -15,7 +15,7 @@ Hướng dẫn chạy trên console:
 
 Download file MyBigNumber.jar và Sum2Number.bat, sau đó cho 2 file cùng 1 folder.
 
-Chạy file Sum2Number.bat và nhập s1, s2 theo hướng dẫn của chương trình. Chương trình sẽ cho ra kết quả phép tính và các bước thực hiện phép tính.
+Chạy file Sum2Number.bat và nhập s1, s2 theo chỉ dẫn của chương trình. Chương trình sẽ cho ra kết quả phép tính và các bước thực hiện phép tính.
 
 
 GÓP Ý CỦA KHÁCH HÀNG 
