@@ -3,6 +3,7 @@
 # Hướng dẫn sử dụng phần mềm
 + Vui lòng tải file Add2Number.jar tại đây: https://drive.google.com/open?id=1sBJe2RJh92jssrgHyYlOMxyaHoRUJgD9
 + Các bước thực hiện:
+
   B1:Nhập số thứ nhất vào ô bên cạnh chữ "Nhập số thứ 1".
   B2:Nhập số thứ hai vào ô bên cạnh chữ "Nhập số thứ 2"
   B3:Nhấn vào nút OK để thực hiện phép toán. Kết quả và các bước thực hiện sẽ được in ra màn hình phía bên phải
