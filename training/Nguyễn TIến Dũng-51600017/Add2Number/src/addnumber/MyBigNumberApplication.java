@@ -18,6 +18,8 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
      */
     public MyBigNumberApplication() {
         initComponents();
+        jTextField1.setText(s11);
+        jTextField2.setText(s22);
     }
 
     /**
@@ -186,6 +188,8 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
         final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
         final boolean flag1;// biến để lưu dữ kết quả xét chuỗi s1 
         final boolean flag2;// biến để lưu dữ kết quả xét chuỗi s2
+        jTextField1.setText(s11);
+        jTextField2.setText(s22);
         String s1 = jTextField1.getText();
         String s2 = jTextField2.getText();
         // Kiểm tra kí tự đặc biệt
@@ -248,6 +252,14 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
                 new MyBigNumberApplication().setVisible(true);
             }
         });
+        
+        if(args.length > 0){
+            s11 =  args[0];
+            s22 = args[1];
+        }else{
+            s11 = "0";
+            s22 = "0";
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -267,7 +279,8 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
     private java.awt.TextArea textArea1;
     private java.awt.TextArea textArea2;
     // End of variables declaration//GEN-END:variables
-
+    public static String s11 = "";
+    public static String s22 = "";  
     @Override
     public void send(String msg) {
         textArea1.setText(msg);
