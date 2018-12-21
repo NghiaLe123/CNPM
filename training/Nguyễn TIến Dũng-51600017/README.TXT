@@ -10,6 +10,9 @@ Hướng dẫn :
   B3:Nhấn vào nút sum để thực hiện phép toán. Kết quả và các bước thực hiện sẽ được in ra màn hình phía bên dưới
   B4:Nhấn vào nút clean để xóa phép toán đang thực hiện và thực hiện phép toán mới nếu muốn.
 3. Xem các testcase tại : Các yêu cầu của khách hàng đã hoàn thành.xlsx và esult_TestCase.PNG
+4. Để kiểm tra kết quả testcase : bạn mở cmd và gõ : 
+  - javac MyBigNumBerTest.java
+  - java MyBigNumberTest
 
 
 
