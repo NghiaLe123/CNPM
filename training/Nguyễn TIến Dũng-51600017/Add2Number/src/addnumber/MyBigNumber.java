@@ -34,8 +34,8 @@ public class MyBigNumber {
         String step = "";// Chuỗi step sẽ làm tham số cho hàm send của interface
         String conver = "";        
         Pattern p = Pattern.compile("\\D"); // Chuỗi đại diện cho kí tự số từ [0-9]
-        Matcher m1 = p.matcher(s1);
-        Matcher m2 = p.matcher(s2);
+        final Matcher m1 = p.matcher(s1);
+        final Matcher m2 = p.matcher(s2);
         int errorPos; // Vị trí của lỗi
         int length1 = s1.length();// Độ dài của chuỗi s1
         int length2 = s2.length();// Độ dài của chuỗi s2
