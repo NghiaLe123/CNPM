@@ -4,15 +4,22 @@ BUILD OUTPUT DESCRIPTION
 
 Hướng dẫn : 
 1. Tải phần mềm tại link : https://drive.google.com/open?id=1BFRqJ7nkMSM5SMPcIMlciR2Eex_fLy0y
-2. Xem hướng dẫn tại file :Hướng dẫn sử dụng phần mềm và các Testcase của phần mềm.xlsx
+2. Cách sử dụng:
+  B1:Nhâp số thứ nhất vào ô bên cạnh chữ "Nhập số thứ 1".
+  B2:Nhâp số thứ hai vào ô bên cạnh chữ "Nhập số thứ 2"
+  B3:Nhấn vào nút sum để thực hiện phép toán. Kết quả và các bước thực hiện sẽ được in ra màn hình phía bên dưới
+  B4:Nhấn vào nút clean để xóa phép toán đang thực hiện và thực hiện phép toán mới nếu muốn.
 3. Xem các testcase tại : Các yêu cầu của khách hàng đã hoàn thành.xlsx và esult_TestCase.PNG
+
+
+
+========================
+
 
 ========================
 CONFIRM MY FRIEND
 ========================
 
-
-========================
 Nguyễn Văn Hải 
 - Đầu tiển mình thấy code của bạn sạch và giải thích khá dễ hiểu và app có hướng dẫn chi tiết giúp người dùng dễ dàng thực hiện. Những trong đó mình có vài ý kiến đóng góp là:
 - Testcase của bạn còn chưa đầy đủ các trường hợp ngoại lệ có thể xảy ra lúc người dùng nhập sai
