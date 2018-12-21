@@ -17,6 +17,12 @@ public interface IReceiver {
      * @since 2018
      */
 
+    /**
+     *
+     * @param msg
+     */
+    
+
     void send(String msg);
 
 }
