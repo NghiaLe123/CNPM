@@ -50,12 +50,12 @@ public class MyBigNumber {
         
         if (s1.contains("-")) {
 
-            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s1);        	      	
+            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s1);
         }
         
         if (s2.contains("-")) {
 
-		    throw new NumberFormatException("Lỗi xuất hiện số âm: " + s2);        	      	
+            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s2);
         }
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
