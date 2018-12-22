@@ -3,20 +3,19 @@ Download file MyBigNumber.jar và Sum2Number.bat tại: https://drive.google.com
 
 Xem Coverage ở Coverage.png.
 
-Hướng dẫn sử dụng phần mềm:
-Chạy file MyBigNumber.jar.
-Nhập lần lượt số s1 và s2 chương trình sẽ đưa ra kết quả tổng 2 số và các bước cộng.
-
 Chương trình có 2 trường hợp nhận diện lỗi:
 1. Lỗi xuất hiện số âm trong s1 hoặc s2.
 2. Lỗi xuất hiện kí tự không phải số trong s1 hoặc s2.
 
 Hướng dẫn chạy trên console:
 
-Download file MyBigNumber.jar và Sum2Number.bat, sau đó cho 2 file cùng 1 folder.
+Cách 1: đặt file MyBigNumber.jar và Sum2Number.bat cùng 1 folder.
 
-Chạy file Sum2Number.bat và nhập s1, s2 theo chỉ dẫn của chương trình. Chương trình sẽ cho ra kết quả phép tính và các bước thực hiện phép tính.
+Chạy file Sum2Number.bat, nhập lệnh java -jar "MyBigNumber.jar" "s1" "s2" , trong đó s1 và s2 là 2 số cần tính toán, chương trình sẽ in ra kết quả và các bước cần tính toán.
 
+Cách 2: bật cmd và liên kết đến địa chỉ thư mục chứa file jar.
+
+Nhập lệnh java -jar "MyBigNumber.jar" "s1" "s2" , trong đó s1 và s2 là 2 số cần tính toán, chương trình sẽ in ra kết quả và các bước cần tính toán.
 
 GÓP Ý CỦA KHÁCH HÀNG 
 

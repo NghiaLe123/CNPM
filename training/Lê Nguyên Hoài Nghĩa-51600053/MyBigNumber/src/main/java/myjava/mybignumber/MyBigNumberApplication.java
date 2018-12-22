@@ -12,16 +12,14 @@ public class MyBigNumberApplication implements IReceiver {
 		Scanner sc = new Scanner(System.in);
 		MyBigNumberApplication app = new MyBigNumberApplication();
 		MyBigNumber s = new MyBigNumber(app);
-		System.out.print("Chương trình cộng 2 số \n");
 		try {
-		System.out.print("Nhập số s1: ");
-		String s1 = sc.nextLine();
+			
+		String s1 = args[0];
 		
-		System.out.print("Nhập số s2: ");
-		String s2 = sc.nextLine();
+		String s2 = args[1];
 		
 		String result = s.sum(s1, s2);
-		System.out.println("Kết quả là: " + result);
+		System.out.println("Ket qua la: " + result);
 		
 		}
 		

@@ -14,6 +14,10 @@ public class MyBigNumber {
     
     private IReceiver ireceiver;
 
+    /**
+     *
+     * @param ireceiver
+     */
     public MyBigNumber(final IReceiver ireceiver) {
         this.ireceiver = ireceiver;
     }
@@ -25,8 +29,9 @@ public class MyBigNumber {
      * 
      * @param s1 chuỗi số thứ nhất.
      * @param s2 chuỗi số thứ hai.
+     * @return 
      */
-    public String sum(final String s1, final String s2) {
+    public String sum(String s1, String s2) {
         //Lấy độ dài của 2 chuỗi 
         //Khai báo 
 
@@ -51,28 +56,38 @@ public class MyBigNumber {
         int remember = 0;    // nhớ nếu t lớn hơn hoặc bằng 10
         int remember1 = 0; // biến tạm
          
+        // Kiểm tra chuỗi null
+        if ((s1 == null) || (s2.trim().isEmpty())) {
+            s1 = "0";
+        }
+
+        if ((s2 == null) || (s2.trim().isEmpty())) {
+            s2 = "0";
+        }
         // Kiểm tra số âm
         if (s1.charAt(0) == '-') {
+            errorPos = 1;
             this.ireceiver.send("Vui lòng không chứ số âm trong s1 : " + s1);
-            throw new NumberFormatException("Vui lòng không chứ số âm trong s1 : " + s1);
+            throw new ExNumberFormatException(errorPos);
         } 
         
         if (s2.charAt(0) == '-') {
+            errorPos = 1;
             this.ireceiver.send("Vui lòng không chứ số âm trong s2 : " + s2);
-            throw new NumberFormatException("Vui lòng không chứ số âm trong s2" + s2);
+            throw new ExNumberFormatException(errorPos);
         }
         
         // Kiểm tra kí tự đặc biệt hoặc chữ
         if (m1.find()) {
             errorPos = m1.start() + 1;
             this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
-            throw new NumberFormatException(errorPos + "");   
+            throw new ExNumberFormatException(errorPos);   
         }
         
         if (m2.find()) {
             errorPos = m2.start() + 1;
             this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
-            throw new NumberFormatException(errorPos + "");
+            throw new ExNumberFormatException(errorPos);
         }
         
         //// Lặp maxLen lần

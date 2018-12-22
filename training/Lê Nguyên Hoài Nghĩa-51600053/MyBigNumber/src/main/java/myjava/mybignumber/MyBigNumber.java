@@ -50,22 +50,24 @@ public class MyBigNumber {
         
         if (s1.contains("-")) {
 
-            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s1);
+            String erroPos = "1";
+            throw new NumberFormatException(erroPos);
         }
         
         if (s2.contains("-")) {
 
-            throw new NumberFormatException("Lỗi xuất hiện số âm: " + s2);
+            String erroPos = "1";
+            throw new NumberFormatException(erroPos);
         }
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
-
-            throw new NumberFormatException("Lỗi xuất hiện kí tự khác số: " + s1);
+        
+            throw new NumberFormatException((m1.start() + 1) + "");
         }
         
         if (b2) {
 
-            throw new NumberFormatException("Lỗi xuất hiện kí tự khác số: " + s2);
+            throw new NumberFormatException((m2.start() + 1) + "");
         }
         
         
@@ -86,15 +88,18 @@ public class MyBigNumber {
             finalResult = (t % 10) + finalResult;
             mem = t / 10;
             
-            msg = "Bước " + (i + 1) + ": " + c1 + " + " + c2 + " = " 
-                + (t - mem) + " + " + mem + " = " + t + ". Viết " + (t % 10) + " Nhớ " + mem;
+            msg = "Buoc " + (i + 1) + ": " + c1 + " + " + c2 + " = " 
+                + (t - mem) + " + " + mem + " = " + t + ". Viet " + (t % 10) + " Nho " + mem;
             this.ireceiver.send(msg);
         }
         
         //kết thúc vòng lặp, nếu mem có giá trị thì ghép mem vào trước kq
         if (mem > 0) {
+
             finalResult = mem + finalResult;
         }
+        
+
         
         return finalResult;
     }
