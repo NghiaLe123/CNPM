@@ -1,5 +1,0 @@
-package myjava.mybignumber;
-
-public interface IReceiver {
-
-}

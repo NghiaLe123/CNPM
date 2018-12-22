@@ -1,5 +1,0 @@
-package hainguyen.mybignumberapp;
-
-public interface IReceiver {
-
-}
