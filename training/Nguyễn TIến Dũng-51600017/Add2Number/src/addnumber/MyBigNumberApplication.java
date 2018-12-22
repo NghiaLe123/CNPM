@@ -279,8 +279,21 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
     private java.awt.TextArea textArea1;
     private java.awt.TextArea textArea2;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     *
+     */
     public static String s11 = "";
+
+    /**
+     *
+     */
     public static String s22 = "";  
+
+    /**
+     *
+     * @param msg
+     */
     @Override
     public void send(String msg) {
         textArea1.setText(msg);

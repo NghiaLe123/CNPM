@@ -57,38 +57,37 @@ public class MyBigNumber {
         int remember1 = 0; // biến tạm
          
         // Kiểm tra chuỗi null
-        if(s1.isEmpty()) {
+        if ((s1 == null) || (s2.trim().isEmpty())) {
             s1 = "0";
         }
 
-        if(s2.isEmpty()) {
-            s2 = "0";        
+        if ((s2 == null) || (s2.trim().isEmpty())) {
+            s2 = "0";
         }
-
         // Kiểm tra số âm
         if (s1.charAt(0) == '-') {
             errorPos = 1;
             this.ireceiver.send("Vui lòng không chứ số âm trong s1 : " + s1);
-            throw new NumberFormatException(errorPos + "");
+            throw new ExNumberFormatException(errorPos);
         } 
         
         if (s2.charAt(0) == '-') {
             errorPos = 1;
             this.ireceiver.send("Vui lòng không chứ số âm trong s2 : " + s2);
-            throw new NumberFormatException(errorPos + "");
+            throw new ExNumberFormatException(errorPos);
         }
         
         // Kiểm tra kí tự đặc biệt hoặc chữ
         if (m1.find()) {
             errorPos = m1.start() + 1;
             this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s1 : " + s1);
-            throw new NumberFormatException(errorPos + "");   
+            throw new ExNumberFormatException(errorPos);   
         }
         
         if (m2.find()) {
             errorPos = m2.start() + 1;
             this.ireceiver.send("Vui lòng không chứ kí tự đặc biệt hoặc chữ trong s2 : " + s2);
-            throw new NumberFormatException(errorPos + "");
+            throw new ExNumberFormatException(errorPos);
         }
         
         //// Lặp maxLen lần
