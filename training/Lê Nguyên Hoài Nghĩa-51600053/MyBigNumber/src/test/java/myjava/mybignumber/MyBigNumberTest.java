@@ -22,7 +22,7 @@ public class MyBigNumberTest implements IReceiver {
         MyBigNumber myClass = new MyBigNumber(this);
         String sum = myClass.sum("2","-2");
     	}
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
     		 assertEquals("1", ex.getMessage());
     	}
 
@@ -43,7 +43,7 @@ public class MyBigNumberTest implements IReceiver {
         String sum = myClass.sum("-12","123");
     	}
     	
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
    		    assertEquals("1", ex.getMessage());
     	}
     	
@@ -56,7 +56,7 @@ public class MyBigNumberTest implements IReceiver {
         MyBigNumber myClass = new MyBigNumber(this);
         String sum = myClass.sum("12a","123");
     	}
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
     		 assertEquals("3", ex.getMessage());
     	}
     }
@@ -68,7 +68,7 @@ public class MyBigNumberTest implements IReceiver {
         MyBigNumber myClass = new MyBigNumber(this);
         String sum = myClass.sum("123","abc");
     	}
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
    		    assertEquals("1", ex.getMessage());
    	    }
 
@@ -80,7 +80,7 @@ public class MyBigNumberTest implements IReceiver {
         MyBigNumber myClass = new MyBigNumber(this);
         String sum = myClass.sum("13a","123a");
     	}
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
     		assertEquals("3", ex.getMessage());
     	}
     }
@@ -92,7 +92,7 @@ public class MyBigNumberTest implements IReceiver {
         MyBigNumber myClass = new MyBigNumber(this);
         String sum = myClass.sum("56-","-123");
     	}
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
    		 	assertEquals("1", ex.getMessage());
     	}
 
@@ -104,7 +104,7 @@ public class MyBigNumberTest implements IReceiver {
         MyBigNumber myClass = new MyBigNumber(this);
         String sum = myClass.sum("abc+1","13");
     	}
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
    		 	assertEquals("1", ex.getMessage());
     	}
   
@@ -117,7 +117,7 @@ public class MyBigNumberTest implements IReceiver {
         String sum = myClass.sum("$@@","@(@*$");
     	}
     	
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
    		 	assertEquals("1", ex.getMessage());
     	}
     	
@@ -129,7 +129,7 @@ public class MyBigNumberTest implements IReceiver {
         MyBigNumber myClass = new MyBigNumber(this);
         String sum = myClass.sum("122.23","123.46");
     	}
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
    		 	assertEquals("4", ex.getMessage());
     	}
     }
@@ -169,11 +169,31 @@ public class MyBigNumberTest implements IReceiver {
         MyBigNumber myClass = new MyBigNumber(this);
         String sum = myClass.sum("null","11");
     	}
-    	catch (ExNumberFormatException ex) {
+    	catch (NumberFormatException ex) {
    		 	assertEquals("1", ex.getMessage());
     	}
 
     }    
+    
+    @Test 
+    public void testSum_N_16() {
+
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum(null,"12");
+        assertEquals("12", sum);      
+
+
+    }  
+ 
+    @Test 
+    public void testSum_N_17() {
+
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum("12",null);
+        assertEquals("12", sum);      
+
+
+    }  
     
     @Override
     

@@ -26,11 +26,12 @@ public class MyBigNumber {
     public String sum(final String s1,final String s2) {
         String finalResult = "";
         String msg = "";
-
+        String str1 = s1;
+        String str2 = s2;
         //Quét các kí tự của chuỗi s1 và s2 từ phải qua trái
         //Xác định độ dài của s1, s2 và độ dài lớn nhất của 2 chuỗi
-        int len1 = s1.length();
-        int len2 = s2.length();
+        int len1 = str1.length();
+        int len2 = str2.length();
         final int maxLen = (len1 > len2) ? len1 : len2;
         int index1; //số thứ tự đang xét của chuỗi s1
         int index2; //số thứ tự đang xét của chuỗi s2
@@ -40,49 +41,58 @@ public class MyBigNumber {
         int d2; // kí tự số của c2;
         int t; //tổng tạm của d1 và d2;
         int mem = 0; //nhớ nếu t>=10
-        int ErrorPos;
+
         Pattern p1 = Pattern.compile("[^0-9 ]");
-        Matcher m1 = p1.matcher(s1);
+        Matcher m1 = p1.matcher(str1);
         boolean b1 = m1.find();
         
         Pattern p2 = Pattern.compile("[^0-9 ]");
-        Matcher m2 = p2.matcher(s2);
+        Matcher m2 = p2.matcher(str2);
         final boolean b2 = m2.find();
         
-        if (s1.contains("-")) {
+   
+        if (str1.contains("-")) {
 
-        	ErrorPos = 1;
-            throw new ExNumberFormatException(ErrorPos);
+        	int ErrorPos = 1;
+            throw new NumberFormatException(ErrorPos + "");
         }
         
-        if (s2.contains("-")) {
+        if (str2.contains("-")) {
 
-            ErrorPos = 1;
-            throw new ExNumberFormatException(ErrorPos);
+            int ErrorPos = 1;
+            throw new NumberFormatException(ErrorPos + "");
         }
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
         
-        	ErrorPos = m1.start() + 1;
-            throw new ExNumberFormatException(ErrorPos);
+        	int ErrorPos = m1.start() + 1;
+            throw new NumberFormatException(ErrorPos + "");
         }
         
         if (b2) {
 
-        	ErrorPos = m2.start() + 1;
-            throw new ExNumberFormatException(ErrorPos);
+        	int ErrorPos = m2.start() + 1;
+            throw new NumberFormatException(ErrorPos + "");
         }
         
         
+        if ((str1 == null) || (str1.trim().isEmpty())) {
+        	
+        	str1 = "0";
+        }
         
+        if ((str2 == null) || (str2.trim().isEmpty())) {
+        	
+        	str2 = "0";
+        }
 
         
         //Lặp maxLen
         for (int i = 0; i < maxLen; i++) {
             index1 = len1 - i - 1;
             index2 = len2 - i - 1;
-            c1 = (index1 >= 0) ? s1.charAt(index1) : '0';
-            c2 = (index2 >= 0) ? s2.charAt(index2) : '0';
+            c1 = (index1 >= 0) ? str1.charAt(index1) : '0';
+            c2 = (index2 >= 0) ? str2.charAt(index2) : '0';
             d1 = c1 - '0';
             d2 = c2 - '0';
             t = d1 + d2 + mem;
