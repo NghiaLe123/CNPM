@@ -122,7 +122,7 @@ public class MyBigNumberTest implements IReceiver {
     public void testSum_N_14() {
 
         MyBigNumber myClass = new MyBigNumber(this);
-        String sum = myClass.sum("18","11");
+        String sum = myClass.sum("88","12");
         assertEquals("29", sum);      
 
 
