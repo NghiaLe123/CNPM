@@ -128,6 +128,15 @@ public class MyBigNumberTest implements IReceiver {
 
     }    
     
+    @Test(expected = NumberFormatException.class)    
+    public void testSum_N_15() {
+
+        MyBigNumber myClass = new MyBigNumber(this);
+        String sum = myClass.sum("null","11");
+
+
+    }    
+    
     @Override
     
     public void send(final String msg) {

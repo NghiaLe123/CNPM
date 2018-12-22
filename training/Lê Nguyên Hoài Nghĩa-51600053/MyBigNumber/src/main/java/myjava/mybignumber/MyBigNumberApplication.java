@@ -19,7 +19,7 @@ public class MyBigNumberApplication implements IReceiver {
 		String s2 = args[1];
 		
 		String result = s.sum(s1, s2);
-		System.out.println("Kết quả là: " + result);
+		System.out.println("Ket qua la: " + result);
 		
 		}
 		
