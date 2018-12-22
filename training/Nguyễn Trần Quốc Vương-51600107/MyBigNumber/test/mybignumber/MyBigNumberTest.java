@@ -26,6 +26,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("1", "3");
+            assertEquals("4", sum);
         }catch(NumberFormatException ex){
             System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }
@@ -38,6 +39,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("12221312", "23232");
+            assertEquals("12244544", sum);
         }catch(NumberFormatException ex){
             System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }
@@ -51,7 +53,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("12A", "978");
         }catch(NumberFormatException ex){
-            System.out.println("Vi tri : " + ex.getMessage() + "\n");
+            System.out.println("Vi tri : " + ex + "\n");
         }
     }
     
@@ -63,7 +65,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("-122", "978");
         }catch(NumberFormatException ex){
-            System.out.println("Vi tri : " + ex.getMessage() + "\n");
+            System.out.println("Vi tri : " + ex + "\n");
         }
     }
     
@@ -75,7 +77,7 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("12=", "978");
         }catch(NumberFormatException ex){
-             System.out.println("Vi tri : " + ex.getMessage() + "\n");
+             System.out.println("Vi tri : " + ex + "\n");
         }
     }
     @Test
@@ -85,6 +87,19 @@ public class MyBigNumberTest implements IReceiver {
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("123.456", "124");
+        }catch(NumberFormatException ex){
+            System.out.println("Vi tri : " + ex + "\n");
+        }
+    }
+    
+    @Test
+    
+    public void testSum_N_7() { // Test trường hợp kết quả kì vọng sai
+        try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("22", "3");
+            assertEquals("21", sum);
         }catch(NumberFormatException ex){
             System.out.println("Vi tri : " + ex.getMessage() + "\n");
         }

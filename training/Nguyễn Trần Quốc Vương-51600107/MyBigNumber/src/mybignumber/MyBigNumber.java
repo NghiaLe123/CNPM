@@ -32,7 +32,7 @@ private IReceiver ireceiver;
      * @param s2 chuỗi số thứ hai.
      * @return chuỗi có giá trị là tổng của hai số s1 và s2.
      */
-    public String sum(final String s1,final String s2) {
+    public String sum(String s1,String s2) {
         String finalkq = "";
         int len1 = s1.length(); //Đội dài của s1
         int len2 = s2.length(); //Độ dài của s2
@@ -46,9 +46,6 @@ private IReceiver ireceiver;
         int v;
         long start;
         long end;
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss yyyy-MM-dd "); // tạo 1 đối tượng có định dạng thời gian HH:mm:ss yyyy-MM-dd
-        Date date = new Date(); // lấy thời gian hệ thống
-        String stringDate = dateFormat.format(date);//Định dạng thời gian theo trên
 
         int ix1; // Vị trí của chuổi s1
         int ix2; // Vị trí của chuổi s2
@@ -61,17 +58,29 @@ private IReceiver ireceiver;
         int sonho = 0; // nếu lớn hơn hoặc bằng 10 thì cộng vài sonho
         int sonho1 = 0; // biến nhớ tạm
         
+        
+        if ((s1 == null) || (s2.trim().isEmpty())) { // Nếu s1 null thì s1=0
+            s1 = "0";
+        }
+
+        if ((s2 == null) || (s2.trim().isEmpty())) { // Nếu s2 null thì s2=0
+            s2 = "0";
+        }
+        
         final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
         final boolean flag1;// Lưu dữ kết quả xét chuỗi s1 
         final boolean flag2;// Lưu dữ kết quả xét chuỗi s2
         
-        if (s1.contains("-")) {
-            this.ireceiver.send(" Co chua so am trong so thu nhat ");
-            throw new NumberFormatException(" Vui long khong chua so am trong " + s1);
+        // Kiểm tra chuỗi âm 
+        if (s1.charAt(0) == '-') {
+            errorPos = 1;
+            this.ireceiver.send(" Co chua so am trong so thu nhat: " + s1);
+            throw new NumberFormatException(errorPos + "");
         }
-        if (s2.contains("-")) {
-            this.ireceiver.send(" Co chua so am trong so thu hai ");
-            throw new NumberFormatException(" Vui long khong chua so am trong " + s2);
+        if (s2.charAt(0) == '-') {
+            errorPos = 1;
+            this.ireceiver.send(" Co chua so am trong so thu hai " + s2);
+            throw new NumberFormatException(errorPos + "");
         }
         
         
@@ -99,7 +108,7 @@ private IReceiver ireceiver;
             d2 = c2 - '0';
             sonho1 = sonho;
             t = d1 + d2 + sonho;
-            k = d1 + d2;
+            
 
             finalkq = (t % 10) + finalkq;
             sonho = t / 10;
@@ -108,7 +117,7 @@ private IReceiver ireceiver;
             
             if (i == 0) {
                 v = i + 1;
-                conver = " Buoc " + v + " : Lay " + d1 + " Cong " + d2 + " Duoc " + k 
+                conver = " Buoc " + v + " : Lay " + d1 + " Cong " + d2 + " Duoc " + (d1 + d2) 
                     + " , " + " Ghi " + (t % 10) + " , " + " Nho " + sonho + ", Ket qua : " + finalkq + "\n";
             } else if (i == (maxLen - 1) && t >= 10) {
                 v = i + 1;
