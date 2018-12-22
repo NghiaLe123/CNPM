@@ -26,7 +26,7 @@ public class MyBigNumber {
     public String sum(final String s1,final String s2) {
         String finalResult = "";
         String msg = "";
-        
+
         //Quét các kí tự của chuỗi s1 và s2 từ phải qua trái
         //Xác định độ dài của s1, s2 và độ dài lớn nhất của 2 chuỗi
         int len1 = s1.length();
@@ -40,6 +40,7 @@ public class MyBigNumber {
         int d2; // kí tự số của c2;
         int t; //tổng tạm của d1 và d2;
         int mem = 0; //nhớ nếu t>=10
+        int ErrorPos;
         Pattern p1 = Pattern.compile("[^0-9 ]");
         Matcher m1 = p1.matcher(s1);
         boolean b1 = m1.find();
@@ -50,24 +51,26 @@ public class MyBigNumber {
         
         if (s1.contains("-")) {
 
-            String erroPos = "1";
-            throw new NumberFormatException(erroPos);
+        	ErrorPos = 1;
+            throw new ExNumberFormatException(ErrorPos);
         }
         
         if (s2.contains("-")) {
 
-            String erroPos = "1";
-            throw new NumberFormatException(erroPos);
+            ErrorPos = 1;
+            throw new ExNumberFormatException(ErrorPos);
         }
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
         
-            throw new NumberFormatException((m1.start() + 1) + "");
+        	ErrorPos = m1.start() + 1;
+            throw new ExNumberFormatException(ErrorPos);
         }
         
         if (b2) {
 
-            throw new NumberFormatException((m2.start() + 1) + "");
+        	ErrorPos = m2.start() + 1;
+            throw new ExNumberFormatException(ErrorPos);
         }
         
         

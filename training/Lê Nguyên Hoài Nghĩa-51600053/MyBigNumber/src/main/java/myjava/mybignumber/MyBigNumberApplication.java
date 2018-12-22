@@ -1,6 +1,6 @@
 package myjava.mybignumber;
 
-import java.util.*;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -9,7 +9,6 @@ public class MyBigNumberApplication implements IReceiver {
 	public static void main(String[] args) {
 		//SpringApplication.run(MyBigNumberApplication.class, args);
 		
-		Scanner sc = new Scanner(System.in);
 		MyBigNumberApplication app = new MyBigNumberApplication();
 		MyBigNumber s = new MyBigNumber(app);
 		try {
@@ -26,9 +25,7 @@ public class MyBigNumberApplication implements IReceiver {
 		catch (NumberFormatException ex){
 			System.out.println(ex.getMessage());
 		}
-		
-		sc.close();
-		
+				
 	}
 	
 	public void send (String msg) {
