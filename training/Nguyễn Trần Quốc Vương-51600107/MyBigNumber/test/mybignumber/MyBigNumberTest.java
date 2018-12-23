@@ -3,6 +3,7 @@ package mybignumber;
 import static junit.framework.Assert.assertEquals;
 import mybignumber.MyBigNumber;
 import org.junit.Test;
+import myjava.mybignumber.ExNumberFormatException;
 
 /**
  * Tác giả:  NGUYỄN TRẦN QUỐC VƯƠNG.
@@ -21,90 +22,97 @@ public class MyBigNumberTest implements IReceiver {
     public static int i = 1;
     @Test
     
-    public void testSum_N_1() { // Trường hợp cộng 2 số có 1 chữ số
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("1", "3");
-            assertEquals("4", sum);
-        }catch(NumberFormatException ex){
-            System.out.println("Vi tri : " + ex.getMessage() + "\n");
-        }
+    public void testSum_N_1() {
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("121", "78");
+        assertEquals("199", result);
     }
     
     @Test
     
     public void testSum_N_2() { // Trường hợp cộng 2 số có nhiều chữ số
-    	try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("12221312", "23232");
-            assertEquals("12244544", sum);
-        }catch(NumberFormatException ex){
-            System.out.println("Vi tri : " + ex.getMessage() + "\n");
-        }
+    	MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("100", "200");
+        assertEquals("300", result);
     }
     
     @Test
     
     public void testSum_N_3() { // Trường hợp chứa chữ
-    	try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("12A", "978");
-        }catch(NumberFormatException ex){
-            System.out.println("Vi tri : " + ex + "\n");
-        }
+    	try {
+            MyBigNumberTest myclass = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(myclass);
+            String sum = mybignumber.sum("343d", "987");
+	}catch(ExNumberFormatException ex) {
+	    assertEquals("Vi tri : 4 chua ki tu dac biet hoac chu", ex.getErrorPos());
+	}
     }
     
     @Test
     
     public void testSum_N_4() { // Trường hợp chứa số âm
-    	try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("-122", "978");
-        }catch(NumberFormatException ex){
-            System.out.println("Vi tri : " + ex + "\n");
-        }
+    	try {
+            MyBigNumberTest myclass = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(myclass);
+            String sum = mybignumber.sum("-829", "213");
+	}catch(ExNumberFormatException ex) {
+	    assertEquals("Vi tri : 1 chua ki tu am", ex.getErrorPos());
+	}
     }
     
     @Test
     
     public void testSum_N_5() { // Trường hợp chứa kí tự đặc biêt
-    	try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("12=", "978");
-        }catch(NumberFormatException ex){
-             System.out.println("Vi tri : " + ex + "\n");
-        }
+    	try {
+            MyBigNumberTest myclass = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(myclass);
+            String sum = mybignumber.sum("27*", "213");
+	}catch(ExNumberFormatException ex) {
+	    assertEquals("Vi tri : 3 chua ki tu dac biet hoac chu", ex.getErrorPos());
+	}
     }
     @Test
     
     public void testSum_N_6() { // Trường hợp chứa dấu
-    	try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("123.456", "124");
-        }catch(NumberFormatException ex){
-            System.out.println("Vi tri : " + ex + "\n");
-        }
+    	try {
+            MyBigNumberTest myclass = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(myclass);
+            String sum = mybignumber.sum("123.323", "213");
+	}catch(ExNumberFormatException ex) {
+	    assertEquals("Vi tri : 4 chua ki tu dac biet hoac chu", ex.getErrorPos());
+	}
+    }
+    
+
+    
+    @Test
+    
+    public void testSum_N_7() { // Test trường hợp s1 không nhập gì
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("", "78");
+        assertEquals("78", result);
     }
     
     @Test
     
-    public void testSum_N_7() { // Test trường hợp kết quả kì vọng sai
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("22", "3");
-            assertEquals("21", sum);
-        }catch(NumberFormatException ex){
-            System.out.println("Vi tri : " + ex.getMessage() + "\n");
-        }
+    public void testSum_N_8() { // Test trường hợp kết quả kì vọng sai
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("56", "");
+        assertEquals("56", result);
     }
     
+    @Test
+    
+    public void testSum_N_9() { // Test trường hợp 2 chuỗi empty
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("", "");
+        assertEquals("", result);
+    }
     
     public void send(final String msg) {
         System.out.println("case " + i + ":" + msg);

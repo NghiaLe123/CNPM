@@ -59,11 +59,10 @@ private IReceiver ireceiver;
         int sonho1 = 0; // biến nhớ tạm
         
         
-        if ((s1 == null) || (s2.trim().isEmpty())) { // Nếu s1 null thì s1=0
+        if ((s1 == null) || (s1.trim().isEmpty())) {
             s1 = "0";
         }
-
-        if ((s2 == null) || (s2.trim().isEmpty())) { // Nếu s2 null thì s2=0
+        if ((s2 == null) || (s2.trim().isEmpty())) {
             s2 = "0";
         }
         
@@ -75,12 +74,12 @@ private IReceiver ireceiver;
         if (s1.charAt(0) == '-') {
             errorPos = 1;
             this.ireceiver.send(" Co chua so am trong so thu nhat: " + s1);
-            throw new NumberFormatException(errorPos + "");
+            throw new NumberFormatException("Vi tri: " + errorPos + " Chua ki tu am ");
         }
         if (s2.charAt(0) == '-') {
             errorPos = 1;
             this.ireceiver.send(" Co chua so am trong so thu hai " + s2);
-            throw new NumberFormatException(errorPos + "");
+            throw new NumberFormatException("Vi tri : " + errorPos + " Chua ki tu am ");
         }
         
         
@@ -89,13 +88,13 @@ private IReceiver ireceiver;
         if (m1.find()) {
             errorPos = m1.start() + 1;
             this.ireceiver.send(" Vui long khong chua ki tu dac biet hoac chu trong s1 : " + s1);
-            throw new NumberFormatException(errorPos + "");   
+            throw new NumberFormatException("Vi tri : " + errorPos + " Chua ki tu dac biet hoac chu ");  
         }
         
         if (m2.find()) {
             errorPos = m2.start() + 1;
             this.ireceiver.send(" Vui long khong chua ki tu dac biet hoac chu trong s2 : " + s2);
-            throw new NumberFormatException(errorPos + "");
+            throw new NumberFormatException("Vi tri loi : " + errorPos + " Chua ki tu dac biet hoac chu ");
         }
 
         for (int i = 0; i < maxLen; i++) { //// Lặp maxLen lần
