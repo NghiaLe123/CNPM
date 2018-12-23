@@ -8,141 +8,126 @@ package testcase;
 import addnumber.ExNumberFormatException;
 import addnumber.IReceiver;
 import addnumber.MyBigNumber;
+import static jdk.nashorn.internal.objects.NativeString.substring;
+import org.hamcrest.Matcher;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Rule;
+import static org.junit.internal.matchers.StringContains.containsString;
+import org.junit.rules.ExpectedException;
 
 /**
  *
  * @author Admin
  */
-public class MyBigNumberTest implements IReceiver{
-    
+public class MyBigNumberTest implements IReceiver {
+
+    public static int i = 1;
+
     public MyBigNumberTest() {
     }
+    
+    @Rule
+    public ExpectedException expected = ExpectedException.none();
+    
     /**
      * Test of sum method, of class MyBigNumber.
      */
+    
     @Test
     public void testSum_N1() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("123", "978");
-            assertEquals("1101", result);
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("123", "978");
+        assertEquals("1101", result);
     }
-    
+
     @Test
     public void testSum_N2() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("13", "978");
-            assertEquals("991", result);
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("13", "978");
+        assertEquals("991", result);
     }
-    
+
     @Test
     public void testSum_N3() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("1234", "78");
-            assertEquals("1312", result);
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("1234", "78");
+        assertEquals("1312", result);
     }
-    
+
     @Test
     public void testSum_N4() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("null","0");
-            assertEquals("0", result);
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("0", "0");
+        assertEquals("0", result);
+    }
+
+    @Test
+    public void testSum_N5()  {
+        expected.expect(ExNumberFormatException.class);
+        expected.expectMessage("1");
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("-12", "978");
     }
     
-    @Test
-    public void testSum_N5() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("12-", "978");
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
-    }
-    
-    @Test
+   @Test
     public void testSum_N6() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("-12", "978");
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        expected.expect(ExNumberFormatException.class);
+        expected.expectMessage("3");
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("12-", "978");
     }
-    
+
     @Test
     public void testSum_N7() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("abc", "978");
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        expected.expect(ExNumberFormatException.class);
+        expected.expectMessage("1");
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("abc", "978");
     }
-    
+
     @Test
     public void testSum_N8() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("abc+1", "978");
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        expected.expect(ExNumberFormatException.class);
+        expected.expectMessage("1");
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("abc+1", "978");
     }
-    
+
     @Test
     public void testSum_N9() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("+*&**)(^&*", "*&*()&&*&");
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        expected.expect(ExNumberFormatException.class);
+        expected.expectMessage("1");
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("+*&**)(^&*", "*&*()&&*&");
     }
-    
+
     @Test
     public void testSum_N10() {
-        try{
-            MyBigNumberTest test = new MyBigNumberTest();
-            MyBigNumber mybignumber = new MyBigNumber(test);
-            String result = mybignumber.sum("123.456", "124");
-        }catch(ExNumberFormatException ex){
-            System.out.printf("Vị trí của lỗi : ", ex);
-        }
+        expected.expect(ExNumberFormatException.class);
+        expected.expectMessage("4");
+        MyBigNumberTest test = new MyBigNumberTest();
+        MyBigNumber mybignumber = new MyBigNumber(test);
+        String result = mybignumber.sum("123.456", "124");
     }
-    
+        
     @Override
     public void send(String msg) {
-        System.out.println(msg);
+        System.out.println("Case" + i + ":");
+        i++;
     }
-    
+
 }
