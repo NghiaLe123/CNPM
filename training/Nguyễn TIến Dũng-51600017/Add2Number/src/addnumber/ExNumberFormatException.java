@@ -10,12 +10,13 @@ package addnumber;
  *
  * @author Admin
  */
-public class ExNumberFormatException extends NumberFormatException{
+public class ExNumberFormatException extends NumberFormatException {
     
     private int errorPos;
     
     public ExNumberFormatException(int num) {
-        errorPos = num;
+        super(num+"");
+        this.errorPos = num;
     }
     
     @Override
