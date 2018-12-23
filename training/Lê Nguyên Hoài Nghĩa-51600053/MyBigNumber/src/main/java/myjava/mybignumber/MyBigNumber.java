@@ -24,6 +24,7 @@ public class MyBigNumber {
      */
     
     public String sum(final String s1,final String s2) {
+    	int ErrPos;
         String finalResult = "";
         String msg = "";
         String str1 = s1;
@@ -53,26 +54,26 @@ public class MyBigNumber {
    
         if (str1.contains("-")) {
 
-        	int ErrorPos = 1;
-            throw new NumberFormatException(ErrorPos + "");
+        	ErrPos = 1;
+            throw new ExNumberFormatException(ErrPos);
         }
         
         if (str2.contains("-")) {
 
-            int ErrorPos = 1;
-            throw new NumberFormatException(ErrorPos + "");
+            ErrPos = 1;
+            throw new ExNumberFormatException(ErrPos);
         }
         
         if (b1) { // kiểm tra s1 có kí tự đặc biệt không
         
-        	int ErrorPos = m1.start() + 1;
-            throw new NumberFormatException(ErrorPos + "");
+        	ErrPos = m1.start() + 1;
+            throw new ExNumberFormatException(ErrPos);
         }
         
         if (b2) {
 
-        	int ErrorPos = m2.start() + 1;
-            throw new NumberFormatException(ErrorPos + "");
+        	ErrPos = m2.start() + 1;
+            throw new ExNumberFormatException(ErrPos);
         }
         
         
