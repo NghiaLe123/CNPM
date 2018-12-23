@@ -14,10 +14,6 @@ public class MyBigNumber {
     
     private IReceiver ireceiver;
 
-    /**
-     *
-     * @param ireceiver
-     */
     public MyBigNumber(final IReceiver ireceiver) {
         this.ireceiver = ireceiver;
     }
@@ -31,7 +27,7 @@ public class MyBigNumber {
      * @param s2 chuỗi số thứ hai.
      * @return 
      */
-    public String sum(String s1, String s2) {
+    public String sum(final String s1, final String s2) {
         //Lấy độ dài của 2 chuỗi 
         //Khai báo 
 
@@ -64,6 +60,7 @@ public class MyBigNumber {
         if ((s2 == null) || (s2.trim().isEmpty())) {
             s2 = "0";
         }
+        
         // Kiểm tra số âm
         if (s1.charAt(0) == '-') {
             errorPos = 1;
