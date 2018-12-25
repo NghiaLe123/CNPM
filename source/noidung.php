@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * add more data into database
+ */
 $data = array("Lession 1",
 ["able",
 "elastic",

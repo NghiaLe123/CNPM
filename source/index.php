@@ -1,4 +1,4 @@
-
+<!--This is the class used to create the main website.-->
 <!DOCTYPE html>
 <html>
 

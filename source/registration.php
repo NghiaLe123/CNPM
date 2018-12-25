@@ -1,4 +1,7 @@
 <?php
+/**
+ * This class is used to create websites for users who register for membership
+ */
 session_start();
 $sessData = !empty($_SESSION['sessData'])?$_SESSION['sessData']:'';
 if(!empty($sessData['status']['msg'])){
@@ -19,8 +22,8 @@ p.error{color:#EA4335; font-size:20px;}
 
 </style>
 <body> 
-		<!-- Duong vien all-->
 		<div class = "container-background"> 
+		    <!--here is show error if any-->
 			<strong><?php echo !empty($statusMsg)?'<center><p class="'.$statusMsgType.'">'.$statusMsg.'</p></center>':''; ?></strong>
 			<form action="userAccount.php" method="post">
 				<div class = "IDLogin">

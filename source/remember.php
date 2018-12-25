@@ -1,6 +1,14 @@
 <?php
+/**
+ *This class that when user logged in is successfully
+ * they were changed into here where they have all application permissions
+ *
+ */
+
+//check if SESSION it exist, then start it.
 if(!isset($_SESSION)){ 
     session_start();
+	//if login successfully, get name of user
 	if($_SESSION['sessData']['status']['type'] == 'success'){
 		$getsuccess = $_SESSION['getnameuser'];
 	}
@@ -33,7 +41,7 @@ if(!isset($_SESSION)){
 	|
 </style>
 </head>
-
+<!--This function is show and hide search button as well as learning vocabulary.-->
 <script>
 $(document).ready(function(){
 	
@@ -60,7 +68,8 @@ $(document).ready(function(){
 <nav class="navbar taikhoan">
   <div class="container-fluid">
 		<ul class="nav navbar-nav navbar-right" style="margin-top: 12px; ">
-			<?php 
+			<?php
+                //show name of user when they logged in is successfully			
 				if (isset($getsuccess)){
 					echo '<li style="font-size: 20px; color: red;"><strong>'.$getsuccess.'</strong></li>';
 					echo '<span style="display: inline-block; font-size: 15px; margin-top: 3px; color: blue; margin-left: 15px;"><a href="userAccount.php?logoutSubmit=1" class="logout">Log out</a></strong></span>';
