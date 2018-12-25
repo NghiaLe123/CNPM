@@ -1,4 +1,8 @@
 <?php
+/**
+ * This class to connect into database and auto create table that has name loginUsers.
+ * The table that to save information about user.
+ */
 $sName="localhost";
 $uname="root";
 $passwd="";
@@ -9,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
-
+//create a table that this name is loginUsers
 $sql="CREATE TABLE loginUsers(
 		id int(11) NOT NULL AUTO_INCREMENT,
 		name VARCHAR(100) COLLATE utf8_vietnamese_ci NOT NULL ,

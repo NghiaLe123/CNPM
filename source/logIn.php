@@ -1,4 +1,7 @@
 <?php
+/**
+ * This class is used to create websites for users to log in to members
+ */
 if(!isset($_SESSION)){ 
     session_start(); 
 } 
@@ -20,7 +23,7 @@ p.success{color:#34A853; font-size:20px;}
 p.error{color:#EA4335; font-size:20px;}
 </style>
 <body> 
-		<!-- Duong vien all-->
+		
 		<div class = "container-background"> 
 			<strong><?php echo !empty($statusMsg)?'<center><p class="'.$statusMsgType.'">'.$statusMsg.'</p></center>':''; ?></strong>
 			<form action="userAccount.php" method="post">
