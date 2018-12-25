@@ -31,24 +31,11 @@ body{
 </head>
 
 <script>
-	$(document).ready(function(){
-	$("#listen").click(function(){
-	
-		 link = 'http://audio.oxforddictionaries.com/en/mp3/hello_gb_1.mp3';
 
-	/* Play an audio. */
-  audio = new Audio(link);
-  audio.play();
-  return false;
-		
-	});
-
-	
-	});
 </script>
 
 <body>
-<button class='clickme'>CLick </button>
+
 <div class="container-fluid">
   <div class="well well-adjust text-center">
 	<h3> Bài 1:...... </h3>	
@@ -65,24 +52,24 @@ body{
 	
 		<div class='col-md-6' id='englishlevel'>
 		
-			<div class='board-ins' style='padding-bottom: 8px; width: 80%'>
-				<h2 class='text-center' id="defi" > Định nghĩa </h2>
+			<div class='btn btn-default board-ins' style='padding-bottom: 8px; width: 80%'>
+				<h2 class='text-center' > Rock </h2>
 			</div>
 			
-			<div class='board-ins' style='padding-bottom: 8px; width: 80%'>
-				<h2 class='text-center' id="pronoun" > Phát âm </h2>
+			<div class='btn btn-default board-ins' style='padding-bottom: 8px; width: 80%'>
+				<h2 class='text-center'> Ice </h2>
 			</div>
 			
 		</div>
 		
 		<div class='col-md-6'>
 		
-			<div class='board-ins' style='padding-bottom: 8px; width: 80%'>
-				<h2 class='text-center' id="examp" > Ví dụ </h2>
+			<div class='btn btn-default board-ins' style='padding-bottom: 8px; width: 80%'>
+				<h2 class='text-center'> Kick </h2>
 			</div>
 			
-			<div class='board-ins' style='padding-bottom: 8px; margin-bottom: 18px; width: 80%'>
-				<h2 class='text-center' id="listen" > Nghe </h2>
+			<div class='btn btn-default board-ins' style='padding-bottom: 8px; margin-bottom: 18px; width: 80%'>
+				<h2 class='text-center'> Stone </h2>
 			</div>
 			
 		</div>

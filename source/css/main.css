@@ -59,3 +59,16 @@
 		border: solid 1px;
 }
 
+#hoctuvung{
+	display: none;
+}
+#tracuu{
+display: none;
+}
+#noidungtuvung{
+	display: none;
+}
+#showUsername{
+	display: none;
+}
+

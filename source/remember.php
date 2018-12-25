@@ -1,5 +1,16 @@
+<?php
+if(!isset($_SESSION)){ 
+    session_start();
+	if($_SESSION['sessData']['status']['type'] == 'success'){
+		$getsuccess = $_SESSION['getnameuser'];
+	}
+	else{
+		$getsuccess = "";
+	}
+	
+}
+?>
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -26,30 +37,20 @@
 <script>
 $(document).ready(function(){
 	
-	$('#showtuvung').click(function(){
-			$("#hoctuvung").show();
-			$('#tracuu').hide();
-			$('#noidungtuvung').hide();
-
-			
+	
+	$("#showtuvung").click(function(){
+		$("#hoctuvung").toggle();
 	});
 	
-	$('#showtracuu').click(function(){
-			$('#tracuu').show();
-			$("#hoctuvung").hide();
-			$('#noidungtuvung').hide();
-
-
-			
+	$("#showtracuu").click(function(){
+		$("#tracuu").toggle();
 	});
 	
-	$('.englishlevel').click(function(){
-			$('#noidungtuvung').show();
-			$("#hoctuvung").hide();
-
-			
-	});	
-
+	$(".englishlevel").click(function(){
+		$("#noidungtuvung").toggle();
+	});
+	
+	
 });
 </script>
 
@@ -58,15 +59,14 @@ $(document).ready(function(){
 
 <nav class="navbar taikhoan">
   <div class="container-fluid">
-
-		<ul class="nav navbar-nav">
-
+		<ul class="nav navbar-nav navbar-right" style="margin-top: 12px; ">
+			<?php 
+				if (isset($getsuccess)){
+					echo '<li style="font-size: 20px; color: red;"><strong>'.$getsuccess.'</strong></li>';
+					echo '<span style="display: inline-block; font-size: 15px; margin-top: 3px; color: blue; margin-left: 15px;"><a href="userAccount.php?logoutSubmit=1" class="logout">Log out</a></strong></span>';
+				}
+			?>
 		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a class='a' href="#"><div>  Sign Up </div></a></li>
-			<li><a href="#"><div>Login </div></a></li>
-		</ul>
-		
   </div>
 </nav>
 
