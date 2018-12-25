@@ -250,7 +250,7 @@ $(document).ready(function(){
 					
 	});	
 					
-	$("#left7").click(function(){
+	$(document).on('click', '#left7', function(){ 
 		$.ajax({
 			
 			url: 'noidung.php',		
