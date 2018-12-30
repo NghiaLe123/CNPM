@@ -1,17 +1,21 @@
+
 package addnumber;
 
 import javax.swing.JOptionPane;
 
+
 public class MyBigNumberApplication extends javax.swing.JFrame implements IReceiver{
 
-    
+   
     public MyBigNumberApplication() {
         initComponents();
         jTextField1.setText(s11);
         jTextField2.setText(s22);
     }
 
+    
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -36,12 +40,12 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 153));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 26)); 
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Phần mềm cộng 2 số");
 
-        jLabel2.setText("Enter the first number");
+        jLabel2.setText("Nhập số thứ 1");
 
-        jLabel3.setText("Enter the second number");
+        jLabel3.setText("Nhập số thứ 2");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,8 +53,8 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); 
-        jLabel4.setText("Result");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("Kết quả");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +70,7 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
         });
 
         jButton2.setBackground(new java.awt.Color(153, 153, 255));
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 0, 0));
         jButton2.setText("Sum");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -75,8 +79,8 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); 
-        jLabel5.setText("Process Steps:");
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("Các bước thực hiện");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -159,42 +163,58 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
         );
 
         pack();
-    }
-	
-	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)
-        final String pattern = "\\d+";
-        final boolean vari1;// biến để lưu dữ kết quả xét chuỗi s1 
-        final boolean vari2;// biến để lưu dữ kết quả xét chuỗi s2
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         // TODO add your handling code here:
+        final String pattern = "\\d+"; // Chuỗi đại diện cho kí tự số từ [0-9]
+        final boolean flag1;// biến để lưu dữ kết quả xét chuỗi s1 
+        final boolean flag2;// biến để lưu dữ kết quả xét chuỗi s2
         jTextField1.setText(s11);
         jTextField2.setText(s22);
         String s1 = jTextField1.getText();
         String s2 = jTextField2.getText();
-		
         // Kiểm tra kí tự đặc biệt
-        vari1 = s1.matches(pattern);
-        vari2 = s2.matches(pattern);
-        if (!vari1) {
-            JOptionPane.showMessageDialog(rootPane,"In the string " + s1 + " have the special character");
+        flag1 = s1.matches(pattern);
+        flag2 = s2.matches(pattern);
+        if (!flag1) {
+            JOptionPane.showMessageDialog(rootPane,"Trong chuỗi số " + s1 + " có chưa kí tự đặc biệt");
         }
         
-        if (!vari2) {
-            JOptionPane.showMessageDialog(rootPane,"In the string " + s2 + " have the special character");
+        if (!flag2) {
+            JOptionPane.showMessageDialog(rootPane,"Trong chuỗi số " + s2 + " có chưa kí tự đặc biệt");
         }
         MyBigNumber mybignumber = new MyBigNumber(this);
         String sum = mybignumber.sum(s1,s2);
         jTextField3.setText(sum);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt)
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
         jTextField1.setText(null);
         jTextField2.setText(null);
         jTextField3.setText(null);
         textArea1.setText(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -211,10 +231,9 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MyBigNumberApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-		
-		
-		//Create and display the form
-		
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MyBigNumberApplication().setVisible(true);
@@ -229,7 +248,8 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
             s22 = "0";
         }
     }
-	
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -245,10 +265,19 @@ public class MyBigNumberApplication extends javax.swing.JFrame implements IRecei
     private javax.swing.JTree jTree1;
     private java.awt.TextArea textArea1;
     private java.awt.TextArea textArea2;
-  
+    // End of variables declaration//GEN-END:variables
+
+    /**
+     *
+     */
     public static String s11 = "";
+
+    /**
+     *
+     */
     public static String s22 = "";  
 
+    @Override
     public void send(String msg) {
         textArea1.setText(msg);
     }
